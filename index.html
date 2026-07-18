@@ -40,6 +40,18 @@
     margin-bottom: 10px;
   }
 
+  .app-footer{
+    width: 100%;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    color: var(--barnblue);
+    opacity: 0.55;
+    margin-top: 28px;
+    padding: 10px 10px 4px;
+  }
+
   h1{
     font-family:'Baloo 2', sans-serif;
     font-weight:800;
@@ -231,7 +243,7 @@
     flex-direction:column;
     align-items:center;
     width: 100%;
-    max-width: 680px;
+    max-width: 1000px;
   }
 
   .game-hub{
@@ -239,7 +251,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 680px;
+    max-width: 900px;
   }
 
   .hub-grid{
@@ -539,7 +551,7 @@
 
   .level-grid{
     display:grid;
-    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     gap: 14px;
     width: 100%;
   }
@@ -855,6 +867,13 @@
   #restartBtn:active{ box-shadow: 1px 1px 0 #337a55; }
   #peekBtn:active:not(:disabled){ box-shadow: 1px 1px 0 #c99417; }
   #backBtn{ background: white; color: var(--plum); }
+
+  #gameArea, #seekGameArea{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   .board{
     display:grid;
@@ -1416,7 +1435,7 @@
     justify-content: center;
     gap: 8px;
     margin: 4px 0 14px;
-    max-width: 680px;
+    max-width: 1100px;
   }
 
   .seek-checklist-item{
@@ -1445,7 +1464,7 @@
   .seek-scene-wrap{
     position: relative;
     width: 100%;
-    max-width: 900px;
+    max-width: 1100px;
     border-radius: 18px;
     overflow: hidden;
     box-shadow: 5px 5px 0 var(--plum);
@@ -1685,7 +1704,7 @@
 
   .almanac-screen{
     width: 100%;
-    max-width: 720px;
+    max-width: 1100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1693,7 +1712,7 @@
 
   .barnyard-screen{
     width: 100%;
-    max-width: 720px;
+    max-width: 1100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2346,7 +2365,7 @@
       <button type="button" class="almanac-entry-btn barnyard-entry-btn" id="hubBarnyardBtn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-barn"/></svg>My Barnyard<span class="hub-secondary-desc">Unlock items and watch it grow</span><span class="hub-barnyard-preview" id="hubBarnyardPreview"></span> <span class="pending-badge hidden" id="hubBarnyardPendingBadge">0</span></button>
     </div>
 
-    <button type="button" class="switch-player-link" id="switchPlayerBtn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-back"/></svg>Switch Player</button>
+    <button type="button" class="switch-player-link" id="switchPlayerBtn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-home"/></svg>Back to Home Screen</button>
   </div>
 
   <div class="hidden level-select" id="levelSelect">
@@ -2452,7 +2471,7 @@
       <p id="barnyardCountText">0 of 16 items unlocked</p>
     </div>
 
-    <p class="barnyard-drag-hint hidden" id="barnyardDragHint">👆 Drag any animal to move it around your barnyard!</p>
+    <p class="barnyard-drag-hint hidden" id="barnyardDragHint">👆 Drag any item to move it around in the barnyard!</p>
 
     <div class="barnyard-scene-wrap" id="barnyardSceneWrap">
       <svg viewBox="0 0 900 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Your barnyard">
@@ -2988,6 +3007,8 @@
 
   <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
 
+  <footer class="app-footer">© 2026 Isibani. All Rights Reserved.</footer>
+
 <script>
   // Maps native emoji characters to the flat, modern Twemoji-style icons embedded
   // in #emoji-defs, so animals render consistently across every device instead of
@@ -3246,7 +3267,17 @@
     { key: "picnic",    emoji: "🧺", name: "Picnic Basket",    left: "35%", bottom: "32%" },
     { key: "flowerpot", emoji: "🌷", name: "Flower Pots",      left: "48%", bottom: "26%" },
     { key: "veggie",    emoji: "🥕", name: "Veggie Patch",     left: "14%", bottom: "8%"  },
-    { key: "squirrel",  emoji: "🐿️", name: "Squirrel Friend",  left: "40%", bottom: "8%"  }
+    { key: "squirrel",  emoji: "🐿️", name: "Squirrel Friend",  left: "40%", bottom: "8%"  },
+    { key: "farmer_nayeli", emoji: "🧑‍🌾", name: "Farmer Nayeli",  left: "60%", bottom: "15%" },
+    { key: "corn",       emoji: "🌽", name: "Corn Stalk",       left: "66%", bottom: "10%" },
+    { key: "tomato",     emoji: "🍅", name: "Tomato Plant",     left: "72%", bottom: "8%"  },
+    { key: "scarecrow",  emoji: "👒", name: "Scarecrow",        left: "78%", bottom: "20%" },
+    { key: "cow",        emoji: "🐄", name: "Cow",              left: "84%", bottom: "12%" },
+    { key: "cat",        emoji: "🐱", name: "Cat",              left: "90%", bottom: "8%"  },
+    { key: "dog",        emoji: "🐶", name: "Dog",              left: "58%", bottom: "34%" },
+    { key: "bicycle",    emoji: "🚲", name: "Bicycle",          left: "68%", bottom: "30%" },
+    { key: "chicken",    emoji: "🐔", name: "Chicken",          left: "78%", bottom: "36%" },
+    { key: "pig",        emoji: "🐷", name: "Pig",              left: "88%", bottom: "28%" }
   ];
 
   // How many barnyard items she gets to pick at each game completion, in order
@@ -4619,6 +4650,7 @@
     seekLevel = SEEK_LEVELS.find(l => l.id === levelId) || SEEK_LEVELS[0];
     seekGameNum = gameNum;
     welcomeScreen.classList.add('hidden');
+    homeBtn.classList.remove('hidden');
     gameHubScreen.classList.add('hidden');
     levelSelect.classList.add('hidden');
     seekLevelSelect.classList.add('hidden');
@@ -4637,6 +4669,7 @@
     stopSeekTimer();
     overlay.classList.remove('show');
     welcomeScreen.classList.add('hidden');
+    homeBtn.classList.remove('hidden');
     gameHubScreen.classList.add('hidden');
     gameArea.classList.add('hidden');
     seekGameArea.classList.add('hidden');
@@ -4697,6 +4730,7 @@
     currentLevel = LEVELS.find(l => l.id === levelId) || LEVELS[0];
     currentGameNum = gameNum;
     welcomeScreen.classList.add('hidden');
+    homeBtn.classList.remove('hidden');
     gameHubScreen.classList.add('hidden');
     levelSelect.classList.add('hidden');
     seekLevelSelect.classList.add('hidden');
@@ -4715,6 +4749,7 @@
     stopTimer();
     overlay.classList.remove('show');
     welcomeScreen.classList.add('hidden');
+    homeBtn.classList.remove('hidden');
     gameHubScreen.classList.add('hidden');
     gameArea.classList.add('hidden');
     seekGameArea.classList.add('hidden');
@@ -4766,7 +4801,7 @@
     stopSeekTimer();
     overlay.classList.remove('show');
     welcomeScreen.classList.add('hidden');
-    homeBtn.classList.remove('hidden');
+    homeBtn.classList.add('hidden');
     gameArea.classList.add('hidden');
     seekGameArea.classList.add('hidden');
     levelSelect.classList.add('hidden');
@@ -4870,6 +4905,7 @@
     stopSeekTimer();
     overlay.classList.remove('show');
     welcomeScreen.classList.add('hidden');
+    homeBtn.classList.remove('hidden');
     gameArea.classList.add('hidden');
     seekGameArea.classList.add('hidden');
     gameHubScreen.classList.add('hidden');
@@ -5060,6 +5096,7 @@
     stopSeekTimer();
     overlay.classList.remove('show');
     welcomeScreen.classList.add('hidden');
+    homeBtn.classList.remove('hidden');
     gameArea.classList.add('hidden');
     seekGameArea.classList.add('hidden');
     gameHubScreen.classList.add('hidden');
@@ -5219,6 +5256,7 @@
     stopSeekTimer();
     overlay.classList.remove('show');
     welcomeScreen.classList.add('hidden');
+    homeBtn.classList.remove('hidden');
     gameArea.classList.add('hidden');
     seekGameArea.classList.add('hidden');
     gameHubScreen.classList.add('hidden');
