@@ -54,6 +54,19 @@
     letter-spacing: 0.5px;
   }
 
+  .logo-mark{
+    margin: 6px 0 2px;
+    line-height: 0;
+  }
+
+  .logo-mark svg{
+    width: clamp(120px, 28vw, 168px);
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 4px 0 var(--shadow));
+  }
+
   .tagline{
     font-family:'Baloo 2', sans-serif;
     font-weight: 700;
@@ -438,6 +451,19 @@
 
   @media (max-width: 640px){
     .board{ grid-template-columns: repeat(var(--cols-mobile, 4), minmax(60px, 1fr)); }
+
+    #gameArea .stats{
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 5;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      background: var(--cream);
+      padding: 10px 10px 8px 68px;
+      border-radius: 0 0 18px 18px;
+      box-shadow: 0 6px 14px rgba(27,79,114,0.18);
+    }
   }
 
   .card{
@@ -699,7 +725,61 @@
 
   <div class="header">
     <div class="paw-trail">🐾 🐾 🐾</div>
-    <h1 id="mainHeading">Nayeli's Farm</h1>
+    <h1 id="mainHeading" class="logo-mark">
+      <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Nayeli's Farm logo">
+
+        <defs>
+          <linearGradient id="skyLogo" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#BEE8FF"/>
+            <stop offset="100%" stop-color="#7FCBF2"/>
+          </linearGradient>
+        </defs>
+        <circle cx="256" cy="256" r="240" fill="#FFC93C"/>
+        <circle cx="256" cy="256" r="230" fill="url(#skyLogo)"/>
+        <clipPath id="clipCircle"><circle cx="256" cy="256" r="230"/></clipPath>
+        <g clip-path="url(#clipCircle)">
+
+          <g>
+            <circle cx="348" cy="138" r="48.0" fill="#FFE29A" opacity="0.35"/>
+            <line x1="382.0" y1="138.0" x2="404.0" y2="138.0" stroke="#FFC93C" stroke-width="3.6" stroke-linecap="round" opacity="0.85"/><line x1="372.0" y1="162.0" x2="387.6" y2="177.6" stroke="#FFC93C" stroke-width="3.6" stroke-linecap="round" opacity="0.85"/><line x1="348.0" y1="172.0" x2="348.0" y2="194.0" stroke="#FFC93C" stroke-width="3.6" stroke-linecap="round" opacity="0.85"/><line x1="324.0" y1="162.0" x2="308.4" y2="177.6" stroke="#FFC93C" stroke-width="3.6" stroke-linecap="round" opacity="0.85"/><line x1="314.0" y1="138.0" x2="292.0" y2="138.0" stroke="#FFC93C" stroke-width="3.6" stroke-linecap="round" opacity="0.85"/><line x1="324.0" y1="114.0" x2="308.4" y2="98.4" stroke="#FFC93C" stroke-width="3.6" stroke-linecap="round" opacity="0.85"/><line x1="348.0" y1="104.0" x2="348.0" y2="82.0" stroke="#FFC93C" stroke-width="3.6" stroke-linecap="round" opacity="0.85"/><line x1="372.0" y1="114.0" x2="387.6" y2="98.4" stroke="#FFC93C" stroke-width="3.6" stroke-linecap="round" opacity="0.85"/>
+            <circle cx="348" cy="138" r="30" fill="#FFC93C"/>
+          </g>
+
+          <g opacity="0.9">
+            <ellipse cx="137.6" cy="136.0" rx="14.3" ry="9.9" fill="#FFFFFF"/>
+            <ellipse cx="176.6" cy="133.4" rx="18.2" ry="12.0" fill="#FFFFFF"/>
+            <ellipse cx="161.0" cy="128.7" rx="15.6" ry="10.4" fill="#FFFFFF"/>
+            <ellipse cx="158.4" cy="139.1" rx="29.9" ry="8.3" fill="#FFFFFF"/>
+          </g>
+          <path d="M-20,552 C 61.44,326 153.6,308 230.4,334 S 399.36,352 532,322 L 532,552 Z" fill="#5BC382"/>
+          <path d="M20,552 C 101.44,366 193.6,348 270.4,374 S 439.36,392 572,362 L 572,552 Z" fill="#2E8B57"/>
+
+          <g>
+            <rect x="187.0" y="266.0" width="138.0" height="108.0" fill="#1F5C82"/>
+            <rect x="181.0" y="266.0" width="150.0" height="108.0" rx="6" fill="#2E7DAF"/>
+            <polygon points="167.0,266.0 256.0,220.0 345.0,266.0" fill="#123A5C"/>
+            <rect x="165.0" y="260.0" width="182.0" height="10" rx="4" fill="#123A5C"/>
+            <circle cx="256.0" cy="294.1" r="12.8" fill="#FFFBEF" stroke="#FFFFFF" stroke-width="3"/>
+            <line x1="243.2" y1="294.1" x2="268.8" y2="294.1" stroke="#1F5C82" stroke-width="3"/>
+            <line x1="256.0" y1="281.3" x2="256.0" y2="306.8" stroke="#1F5C82" stroke-width="3"/>
+            <rect x="233.5" y="307.0" width="45.0" height="67.0" rx="4" fill="#123A5C"/>
+            <line x1="233.5" y1="307.0" x2="278.5" y2="374.0" stroke="#FFFBEF" stroke-width="3"/>
+            <line x1="278.5" y1="307.0" x2="233.5" y2="374.0" stroke="#FFFBEF" stroke-width="3"/>
+            <rect x="233.5" y="307.0" width="45.0" height="67.0" rx="4" fill="none" stroke="#FFFBEF" stroke-width="3"/>
+            <rect x="181.0" y="266.0" width="6" height="108.0" fill="#FFFBEF" opacity="0.55"/>
+            <rect x="325.0" y="266.0" width="6" height="108.0" fill="#123A5C" opacity="0.35"/>
+          </g>
+          <g><rect x="126.0" y="363.1" width="260.0" height="7" rx="3" fill="#FFFFFF" stroke="#D8E6EC" stroke-width="1.5"/><rect x="126.0" y="384.7" width="260.0" height="7" rx="3" fill="#FFFFFF" stroke="#D8E6EC" stroke-width="1.5"/><rect x="121.5" y="348.0" width="9" height="54" rx="2.5" fill="#FFFFFF" stroke="#D8E6EC" stroke-width="1.5"/><polygon points="121.5,348.0 130.5,348.0 126.0,339.0" fill="#FFFFFF" stroke="#D8E6EC" stroke-width="1.5"/><rect x="173.5" y="348.0" width="9" height="54" rx="2.5" fill="#FFFFFF" stroke="#D8E6EC" stroke-width="1.5"/><polygon points="173.5,348.0 182.5,348.0 178.0,339.0" fill="#FFFFFF" stroke="#D8E6EC" stroke-width="1.5"/><rect x="225.5" y="348.0" width="9" height="54" rx="2.5" fill="#FFFFFF" stroke="#D8E6EC" stroke-width="1.5"/><polygon points="225.5,348.0 234.5,348.0 230.0,339.0" fill="#FFFFFF" stroke="#D8E6EC" stroke-width="1.5"/><rect x="277.5" y="348.0" width="9" height="54" rx="2.5" fill="#FFFFFF" stroke="#D8E6EC" stroke-width="1.5"/><polygon points="277.5,348.0 286.5,348.0 282.0,339.0" fill="#FFFFFF" stroke="#D8E6EC" stroke-width="1.5"/><rect x="329.5" y="348.0" width="9" height="54" rx="2.5" fill="#FFFFFF" stroke="#D8E6EC" stroke-width="1.5"/><polygon points="329.5,348.0 338.5,348.0 334.0,339.0" fill="#FFFFFF" stroke="#D8E6EC" stroke-width="1.5"/><rect x="381.5" y="348.0" width="9" height="54" rx="2.5" fill="#FFFFFF" stroke="#D8E6EC" stroke-width="1.5"/><polygon points="381.5,348.0 390.5,348.0 386.0,339.0" fill="#FFFFFF" stroke="#D8E6EC" stroke-width="1.5"/></g>
+        </g>
+        <circle cx="256" cy="256" r="234" fill="none" stroke="#FFFFFF" stroke-width="6" opacity="0.85"/>
+        <circle cx="256" cy="256" r="240" fill="none" stroke="#123A5C" stroke-width="4" opacity="0.25"/>
+        <path id="logoArcPath" d="M 71.8,189.0 A 196,196 0 0 1 440.2,189.0" fill="none"/>
+
+        <text font-family="Poppins, sans-serif" font-weight="700" font-size="40" fill="#123A5C" letter-spacing="2">
+          <textPath href="#logoArcPath" startOffset="50%" text-anchor="middle">NAYELI'S FARM</textPath>
+        </text>
+      </svg>
+    </h1>
     <p class="tagline">Matching Game</p>
     <p class="subtitle" id="subtitleText">A cozy animal matching game, down on the farm</p>
   </div>
