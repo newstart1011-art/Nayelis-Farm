@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wild &amp; Woolly Match-Up</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sun: #FFC93C;
+    --coral: #FF6F91;
+    --sky: #3AB0FF;
+    --grass: #4CAF7D;
+    --plum: #5B2A6E;
+    --cream: #FFF7EA;
+    --card-back-1: #FF6F91;
+    --card-back-2: #FFC93C;
+    --shadow: rgba(91, 42, 110, 0.25);
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    margin:0;
+    min-height:100vh;
+    font-family: 'Nunito', sans-serif;
+    background:
+      radial-gradient(circle at 10% 10%, #FFE9B8 0%, transparent 40%),
+      radial-gradient(circle at 90% 20%, #BEE8FF 0%, transparent 45%),
+      radial-gradient(circle at 50% 90%, #C9F2D8 0%, transparent 45%),
+      var(--cream);
+    color: var(--plum);
+    padding: 20px 14px 60px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .header{
+    text-align:center;
+    margin-bottom: 10px;
+  }
+
+  h1{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:800;
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    margin: 6px 0 4px;
+    color: var(--plum);
+    letter-spacing: 0.5px;
+  }
+
+  .paw-trail{
+    font-size: 1.3rem;
+    letter-spacing: 10px;
+    opacity: 0.8;
+  }
+
+  .subtitle{
+    font-weight:700;
+    color:#8a5a9e;
+    margin: 4px 0 0;
+    font-size: 1rem;
+  }
+
+  .hidden{ display: none !important; }
+
+  /* ---------- Home button ---------- */
+  .home-btn{
+    position:fixed;
+    top:14px;
+    left:14px;
+    background:white;
+    border:3px solid var(--plum);
+    border-radius:50%;
+    width:44px;
+    height:44px;
+    font-size:1.3rem;
+    cursor:pointer;
+    box-shadow:0 4px 0 var(--shadow);
+    z-index: 6;
+    transition: transform 0.1s ease;
+  }
+  .home-btn:hover{ transform: translateY(-2px); }
+  .home-btn:active{ transform: translateY(2px); box-shadow: 0 1px 0 var(--shadow); }
+  .home-btn:focus-visible{ outline: 3px solid var(--sky); outline-offset: 3px; }
+
+  /* ---------- Level select ---------- */
+  .level-select{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    width: 100%;
+    max-width: 680px;
+  }
+
+  .mode-toggle{
+    display:flex;
+    gap:8px;
+    margin: 6px 0 18px;
+    flex-wrap: wrap;
+    justify-content:center;
+  }
+
+  .mode-btn{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:700;
+    font-size:0.9rem;
+    background:white;
+    border:3px solid var(--plum);
+    border-radius:999px;
+    padding:8px 18px;
+    cursor:pointer;
+    color:var(--plum);
+    box-shadow:0 4px 0 var(--shadow);
+    transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+  }
+  .mode-btn:hover{ transform: translateY(-2px); }
+  .mode-btn.active{ background: var(--plum); color: white; }
+  .mode-btn:focus-visible{ outline: 3px solid var(--sky); outline-offset: 3px; }
+
+  .mode-hint{
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #8a5a9e;
+    text-align:center;
+    max-width: 480px;
+    margin: 0 0 16px;
+  }
+
+  .level-grid{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 14px;
+    width: 100%;
+  }
+
+  @media (max-width: 520px){
+    .level-grid{ grid-template-columns: 1fr; }
+  }
+
+  .level-card{
+    position:relative;
+    background:white;
+    border:3px solid var(--plum);
+    border-radius:18px;
+    padding:16px 14px;
+    box-shadow:0 5px 0 var(--shadow);
+    overflow:hidden;
+    text-align:left;
+  }
+
+  .level-card-head{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    flex-wrap:wrap;
+  }
+
+  .level-card .level-name{
+    font-family:'Baloo 2', sans-serif;
+    font-weight:800;
+    font-size:1.1rem;
+    color:var(--plum);
+  }
+
+  .level-card .level-tag{
+    font-weight:800;
+    font-size:0.72rem;
+    padding:3px 10px;
+    border-radius:999px;
+    color:white;
+  }
+
+  .level-tag[data-tag="1"]{ background: var(--grass); }
+  .level-tag[data-tag="2"]{ background: var(--sky); }
+  .level-tag[data-tag="3"]{ background: var(--sun); color:var(--plum); }
+  .level-tag[data-tag="4"]{ background: var(--coral); }
+
+  .reset-icon{
+    margin-left:auto;
+    background:none;
+    border:2px solid var(--plum);
+    border-radius:50%;
+    width:28px;
+    height:28px;
+    font-size:0.9rem;
+    cursor:pointer;
+    color:var(--plum);
+    line-height:1;
+  }
+  .reset-icon:hover{ background: #f3e8ff; }
+  .reset-icon:focus-visible{ outline: 3px solid var(--sky); outline-offset: 2px; }
+
+  .level-detail{
+    display:block;
+    margin:8px 0 10px;
+    font-size:0.82rem;
+    font-weight:700;
+    color:#8a5a9e;
+  }
+
+  .game-row{ display:flex; gap:8px; }
+
+  .game-btn{
+    position:relative;
+    flex:1;
+    font-family:'Nunito', sans-serif;
+    font-weight:800;
+    background: var(--cream);
+    border:2px solid var(--plum);
+    border-radius:12px;
+    padding:9px 6px;
+    cursor:pointer;
+    font-size:0.85rem;
+    color:var(--plum);
+    transition: transform 0.1s ease;
+  }
+  .game-btn:hover:not(:disabled){ transform: translateY(-2px); }
+  .game-btn:focus-visible{ outline: 3px solid var(--sky); outline-offset: 2px; }
+  .game-btn.done{ background:#EFFBF3; border-color:var(--grass); }
+  .game-btn:disabled{ opacity:0.5; cursor:not-allowed; }
+
+  .check-badge{
+    display:inline-flex;
+    margin-left:4px;
+    color:var(--grass);
+    font-weight:900;
+  }
+
+  .level-badge{
+    position:absolute;
+    top:12px;
+    right:-32px;
+    background: var(--sun);
+    color:var(--plum);
+    font-family:'Baloo 2', sans-serif;
+    font-weight:800;
+    font-size:0.7rem;
+    padding:5px 36px;
+    transform: rotate(28deg);
+    box-shadow:0 3px 0 rgba(0,0,0,0.15);
+    white-space: nowrap;
+  }
+
+  .lock-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,0.88);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:4px;
+    font-size:1.8rem;
+    text-align:center;
+    padding:10px;
+    z-index:2;
+  }
+  .lock-overlay span{
+    font-size:0.72rem;
+    font-weight:700;
+    color: var(--plum);
+    font-family:'Nunito', sans-serif;
+  }
+
+  /* ---------- Game area ---------- */
+  .stats{
+    display:flex;
+    gap: 10px;
+    margin: 16px 0;
+    flex-wrap: wrap;
+    justify-content:center;
+  }
+
+  .level-tag-pill{
+    background: white;
+    border: 3px solid var(--plum);
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-family:'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--plum);
+  }
+
+  .stat-pill{
+    background: white;
+    border: 3px solid var(--plum);
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-family:'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 0 var(--shadow);
+    color: var(--plum);
+  }
+
+  .stat-pill span{ color: var(--coral); }
+
+  #timerPill{ border-color: var(--sky); }
+  #timerPill.low{
+    border-color: var(--coral);
+    color: var(--coral);
+    animation: tick 1s ease-in-out infinite;
+  }
+  #timerPill.low span{ color: var(--coral); }
+
+  @keyframes tick{
+    0%, 100%{ transform: scale(1); }
+    50%{ transform: scale(1.06); }
+  }
+
+  .nav-btn{
+    font-family:'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    border: 3px solid var(--plum);
+    border-radius: 999px;
+    padding: 8px 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 var(--shadow);
+    transition: transform 0.1s ease;
+  }
+  .nav-btn:hover{ transform: translateY(-2px); }
+  .nav-btn:active{ transform: translateY(2px); box-shadow: 0 1px 0 var(--shadow); }
+  .nav-btn:focus-visible{ outline: 3px solid var(--sky); outline-offset: 3px; }
+
+  #restartBtn{ background: var(--grass); color: white; box-shadow: 0 4px 0 #337a55; }
+  #restartBtn:active{ box-shadow: 0 1px 0 #337a55; }
+  #backBtn{ background: white; color: var(--plum); }
+
+  .board{
+    display:grid;
+    grid-template-columns: repeat(var(--cols, 6), minmax(58px, 92px));
+    gap: 10px;
+    max-width: 680px;
+    margin: 10px auto;
+  }
+
+  @media (max-width: 640px){
+    .board{ grid-template-columns: repeat(var(--cols-mobile, 4), minmax(60px, 1fr)); }
+  }
+
+  .card{
+    aspect-ratio: 3 / 4;
+    perspective: 800px;
+    cursor: pointer;
+  }
+
+  .card-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(.4,.2,.2,1);
+    transform-style: preserve-3d;
+  }
+
+  .card.flipped .card-inner, .card.matched .card-inner{
+    transform: rotateY(180deg);
+  }
+
+  .card-face{
+    position:absolute;
+    inset:0;
+    border-radius: 14px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    backface-visibility: hidden;
+    box-shadow: 0 4px 0 var(--shadow);
+  }
+
+  .card-back{
+    background: repeating-linear-gradient(135deg, var(--card-back-1) 0 18px, var(--card-back-2) 18px 36px);
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    color: white;
+    text-shadow: 0 2px 2px rgba(0,0,0,0.15);
+  }
+
+  .card-front{
+    background: white;
+    transform: rotateY(180deg);
+    border: 3px solid var(--sky);
+    padding: 4px;
+    text-align:center;
+  }
+
+  .card.matched .card-front{
+    border-color: var(--grass);
+    background: #EFFBF3;
+  }
+
+  .card-front .emoji{
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+    line-height:1;
+  }
+
+  .card-front .name{
+    font-family:'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: clamp(0.5rem, 2vw, 0.78rem);
+    color: var(--plum);
+    margin-top: 2px;
+  }
+
+  .card:not(.flipped):not(.matched) .card-inner:hover{
+    transform: translateY(-4px) rotateZ(-1deg);
+  }
+
+  .card.matched{ cursor: default; }
+  .card.matched .card-inner{ animation: pop 0.5s ease; }
+  @keyframes pop{
+    0%{ transform: rotateY(180deg) scale(1); }
+    50%{ transform: rotateY(180deg) scale(1.12); }
+    100%{ transform: rotateY(180deg) scale(1); }
+  }
+
+  /* ---------- Match feedback flash ---------- */
+  .match-feedback{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%) scale(0.3);
+    font-size: 4.5rem;
+    font-weight:900;
+    border-radius:50%;
+    width:130px;
+    height:130px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index: 20;
+    pointer-events:none;
+    animation: flashPop 0.7s ease forwards;
+    color:white;
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  }
+  .match-feedback.correct{ background: var(--grass); }
+  .match-feedback.incorrect{ background: var(--coral); }
+
+  @keyframes flashPop{
+    0%{ opacity:0; transform:translate(-50%,-50%) scale(0.3); }
+    20%{ opacity:1; transform:translate(-50%,-50%) scale(1.15); }
+    35%{ transform:translate(-50%,-50%) scale(1); }
+    78%{ opacity:1; }
+    100%{ opacity:0; transform:translate(-50%,-50%) scale(1); }
+  }
+
+  /* ---------- Overlay / win card ---------- */
+  .overlay{
+    position: fixed;
+    inset: 0;
+    background: rgba(91,42,110,0.55);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding: 20px;
+    z-index: 10;
+  }
+  .overlay.show{ display:flex; }
+
+  .win-card{
+    background: white;
+    border-radius: 22px;
+    padding: 34px 28px;
+    max-width: 360px;
+    text-align:center;
+    box-shadow: 0 10px 0 var(--shadow);
+  }
+
+  .win-card .big-emoji{ font-size: 3rem; }
+
+  .win-card h2{
+    font-family:'Baloo 2', sans-serif;
+    color: var(--coral);
+    margin: 6px 0;
+    font-size: 1.6rem;
+  }
+
+  .win-card p{ font-weight: 700; color: var(--plum); margin: 4px 0 18px; }
+
+  .win-card button{
+    font-family:'Baloo 2', sans-serif;
+    font-weight: 700;
+    background: var(--coral);
+    color:white;
+    border:none;
+    border-radius: 999px;
+    padding: 10px 26px;
+    font-size: 1rem;
+    cursor:pointer;
+    box-shadow: 0 4px 0 #b8395f;
+    display:block;
+    width: 100%;
+    max-width: 240px;
+    margin: 0 auto 10px;
+  }
+  .win-card button:last-child{ margin-bottom: 0; }
+
+  #shareBtn{
+    background: var(--sky) !important;
+    box-shadow: 0 4px 0 #2678a8 !important;
+  }
+  #pickLevelBtn{
+    background: white !important;
+    color: var(--plum) !important;
+    border: 3px solid var(--plum) !important;
+    box-shadow: 0 4px 0 var(--shadow) !important;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .card-inner, .nav-btn, .card.matched .card-inner, .match-feedback{ transition: none; animation: none; }
+  }
+</style>
+</head>
+<body>
+
+  <button class="home-btn" id="homeBtn" aria-label="Home" title="Home">🏠</button>
+
+  <div class="header">
+    <div class="paw-trail">🐾 🐾 🐾</div>
+    <h1>Wild &amp; Woolly Match-Up</h1>
+    <p class="subtitle" id="subtitleText">Pick a level to start matching!</p>
+  </div>
+
+  <div class="level-select" id="levelSelect">
+    <div class="mode-toggle" id="modeToggle">
+      <button class="mode-btn" data-mode="locked">🔒 Locked</button>
+      <button class="mode-btn" data-mode="unlocked">🔓 Unlocked</button>
+    </div>
+    <p class="mode-hint" id="modeHint">Locked mode: finish both games in a level to unlock the next one. Unlocked mode: play any level, any time.</p>
+    <div class="level-grid" id="levelGrid"></div>
+  </div>
+
+  <div class="hidden" id="gameArea">
+    <div class="stats">
+      <div class="level-tag-pill" id="currentLevelTag">Level 1 &middot; Easy &middot; Game 1</div>
+      <div class="stat-pill">Moves: <span id="moves">0</span></div>
+      <div class="stat-pill">Matches: <span id="matches">0</span> / <span id="totalPairs">6</span></div>
+      <div class="stat-pill" id="timerPill">⏱️ <span id="timer">3:00</span></div>
+      <button class="nav-btn" id="restartBtn">🔄 Restart</button>
+      <button class="nav-btn" id="backBtn">⬅ Back</button>
+    </div>
+
+    <div class="board" id="board" role="grid" aria-label="Animal matching game board"></div>
+  </div>
+
+  <div class="overlay" id="overlay">
+    <div class="win-card">
+      <div class="big-emoji" id="winEmoji">🎉🦁🎉</div>
+      <h2 id="winHeading">You did it!</h2>
+      <p id="winStats">You matched all 12 animals!</p>
+      <button id="playAgainBtn">Play Again</button>
+      <button id="shareBtn">📤 Share My Score</button>
+      <button id="pickLevelBtn">Choose Level</button>
+    </div>
+  </div>
+
+<script>
+  const animals = [
+    { name: "Dog",      emoji: "🐶" },
+    { name: "Cat",      emoji: "🐱" },
+    { name: "Rabbit",   emoji: "🐰" },
+    { name: "Horse",    emoji: "🐴" },
+    { name: "Cow",      emoji: "🐮" },
+    { name: "Sheep",    emoji: "🐑" },
+    { name: "Lion",     emoji: "🦁" },
+    { name: "Elephant", emoji: "🐘" },
+    { name: "Tiger",    emoji: "🐯" },
+    { name: "Giraffe",  emoji: "🦒" },
+    { name: "Panda",    emoji: "🐼" },
+    { name: "Owl",      emoji: "🦉" },
+    { name: "Dolphin",  emoji: "🐬" },
+    { name: "Zebra",    emoji: "🦓" },
+    { name: "Penguin",  emoji: "🐧" },
+    { name: "Kangaroo", emoji: "🦘" }
+  ];
+
+  const LEVELS = [
+    { id: 1, label: "Level 1", tag: "Easy",                 pairs: 6,  seconds: 3 * 60,      cols: 4, colsMobile: 3 },
+    { id: 2, label: "Level 2", tag: "Challenging",           pairs: 9,  seconds: 3 * 60 + 30, cols: 6, colsMobile: 3 },
+    { id: 3, label: "Level 3", tag: "Difficult",             pairs: 12, seconds: 4 * 60,      cols: 6, colsMobile: 4 },
+    { id: 4, label: "Level 4", tag: "Extremely Difficult",   pairs: 16, seconds: 4 * 60 + 30, cols: 8, colsMobile: 4 }
+  ];
+
+  const STORAGE_KEY = 'wwmu_progress_v1';
+
+  const board = document.getElementById('board');
+  const movesEl = document.getElementById('moves');
+  const matchesEl = document.getElementById('matches');
+  const totalPairsEl = document.getElementById('totalPairs');
+  const overlay = document.getElementById('overlay');
+  const winStats = document.getElementById('winStats');
+  const winEmoji = document.getElementById('winEmoji');
+  const winHeading = document.getElementById('winHeading');
+  const restartBtn = document.getElementById('restartBtn');
+  const backBtn = document.getElementById('backBtn');
+  const homeBtn = document.getElementById('homeBtn');
+  const playAgainBtn = document.getElementById('playAgainBtn');
+  const pickLevelBtn = document.getElementById('pickLevelBtn');
+  const shareBtn = document.getElementById('shareBtn');
+  const timerEl = document.getElementById('timer');
+  const timerPill = document.getElementById('timerPill');
+  const levelSelect = document.getElementById('levelSelect');
+  const gameArea = document.getElementById('gameArea');
+  const currentLevelTag = document.getElementById('currentLevelTag');
+  const levelGrid = document.getElementById('levelGrid');
+  const modeToggle = document.getElementById('modeToggle');
+  const subtitleText = document.getElementById('subtitleText');
+
+  const encouragements = [
+    "Time's up, but great effort! Every try makes you a sharper matcher. Give it another go!",
+    "So close! Your animal memory is growing stronger every round. Play again?",
+    "Nice try! Even the best matchers need a few rounds to warm up. Ready for another?",
+    "Time flew by! You found some great matches. Have another go and beat your score!"
+  ];
+
+  let progress = loadProgress();
+  let currentLevel = LEVELS[0];
+  let currentGameNum = 1;
+  let deck = [];
+  let flipped = [];
+  let matchedCount = 0;
+  let moves = 0;
+  let lock = false;
+  let secondsLeft = 0;
+  let timerId = null;
+  let lastShareText = '';
+
+  /* ---------------- Progress storage ---------------- */
+
+  function loadProgress(){
+    try{
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if(raw) return JSON.parse(raw);
+    } catch(e){ /* ignore corrupt storage */ }
+    return { mode: 'unlocked', completed: {} };
+  }
+
+  function saveProgress(){
+    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(progress)); }
+    catch(e){ /* storage unavailable, continue without persistence */ }
+  }
+
+  function gameKey(levelId, gameNum){ return `${levelId}_${gameNum}`; }
+  function isGameComplete(levelId, gameNum){ return !!progress.completed[gameKey(levelId, gameNum)]; }
+  function isLevelComplete(levelId){ return isGameComplete(levelId, 1) && isGameComplete(levelId, 2); }
+
+  function isLevelLocked(levelId){
+    if(progress.mode !== 'locked') return false;
+    if(levelId === 1) return false;
+    return !isLevelComplete(levelId - 1);
+  }
+
+  function markGameComplete(levelId, gameNum){
+    progress.completed[gameKey(levelId, gameNum)] = true;
+    saveProgress();
+  }
+
+  function resetLevel(levelId){
+    delete progress.completed[gameKey(levelId, 1)];
+    delete progress.completed[gameKey(levelId, 2)];
+    saveProgress();
+    renderLevelSelect();
+  }
+
+  function setMode(mode){
+    progress.mode = mode;
+    saveProgress();
+    renderLevelSelect();
+  }
+
+  /* ---------------- Sound effects ---------------- */
+
+  let audioCtx = null;
+  function getAudioCtx(){
+    if(!audioCtx){
+      const Ctx = window.AudioContext || window.webkitAudioContext;
+      if(Ctx) audioCtx = new Ctx();
+    }
+    return audioCtx;
+  }
+
+  function playTone(freq, startOffset, duration, type, gainVal){
+    const ctx = getAudioCtx();
+    if(!ctx) return;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = type;
+    osc.frequency.value = freq;
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    const t0 = ctx.currentTime + startOffset;
+    gain.gain.setValueAtTime(gainVal, t0);
+    gain.gain.exponentialRampToValueAtTime(0.001, t0 + duration);
+    osc.start(t0);
+    osc.stop(t0 + duration + 0.03);
+  }
+
+  function playCorrectSound(){
+    playTone(523.25, 0,    0.16, 'sine', 0.18);
+    playTone(783.99, 0.11, 0.24, 'sine', 0.18);
+  }
+
+  function playIncorrectSound(){
+    playTone(220,    0,    0.18, 'sawtooth', 0.10);
+    playTone(164.81, 0.12, 0.26, 'sawtooth', 0.10);
+  }
+
+  function showFeedback(correct){
+    const el = document.createElement('div');
+    el.className = 'match-feedback ' + (correct ? 'correct' : 'incorrect');
+    el.textContent = correct ? '✓' : '✕';
+    el.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 700);
+  }
+
+  /* ---------------- Level select rendering ---------------- */
+
+  function formatTime(s){
+    const m = Math.floor(s / 60);
+    const sec = s % 60;
+    return `${m}:${sec.toString().padStart(2, '0')}`;
+  }
+
+  function levelCardHTML(level){
+    const locked = isLevelLocked(level.id);
+    const complete = isLevelComplete(level.id);
+    const g1 = isGameComplete(level.id, 1);
+    const g2 = isGameComplete(level.id, 2);
+
+    return `
+      <div class="level-card">
+        ${complete ? '<div class="level-badge">🏅 Complete!</div>' : ''}
+        ${locked ? `<div class="lock-overlay">🔒<span>Finish Level ${level.id - 1} to unlock</span></div>` : ''}
+        <div class="level-card-head">
+          <span class="level-name">${level.label}</span>
+          <span class="level-tag" data-tag="${level.id}">${level.tag}</span>
+          <button class="reset-icon" type="button" title="Reset this level" aria-label="Reset ${level.label}" data-action="reset" data-level="${level.id}">↺</button>
+        </div>
+        <span class="level-detail">${level.pairs} pairs &middot; ${formatTime(level.seconds)} &middot; ${level.pairs * 2} cards</span>
+        <div class="game-row">
+          <button class="game-btn ${g1 ? 'done' : ''}" type="button" data-action="play" data-level="${level.id}" data-game="1" ${locked ? 'disabled' : ''}>
+            Game 1 ${g1 ? '<span class="check-badge">✓</span>' : ''}
+          </button>
+          <button class="game-btn ${g2 ? 'done' : ''}" type="button" data-action="play" data-level="${level.id}" data-game="2" ${locked ? 'disabled' : ''}>
+            Game 2 ${g2 ? '<span class="check-badge">✓</span>' : ''}
+          </button>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderLevelSelect(){
+    levelGrid.innerHTML = LEVELS.map(levelCardHTML).join('');
+    modeToggle.querySelectorAll('.mode-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.mode === progress.mode);
+    });
+  }
+
+  levelGrid.addEventListener('click', (e) => {
+    const playBtn = e.target.closest('[data-action="play"]');
+    if(playBtn){
+      if(playBtn.disabled) return;
+      startLevel(Number(playBtn.dataset.level), Number(playBtn.dataset.game));
+      return;
+    }
+    const resetBtn = e.target.closest('[data-action="reset"]');
+    if(resetBtn){
+      const levelId = Number(resetBtn.dataset.level);
+      const level = LEVELS.find(l => l.id === levelId);
+      if(confirm(`Reset ${level.label}? This clears both games' checkmarks and its badge.`)){
+        resetLevel(levelId);
+      }
+    }
+  });
+
+  modeToggle.addEventListener('click', (e) => {
+    const btn = e.target.closest('.mode-btn');
+    if(btn) setMode(btn.dataset.mode);
+  });
+
+  /* ---------------- Game logic ---------------- */
+
+  function shuffle(arr){
+    for(let i = arr.length - 1; i > 0; i--){
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
+  function buildDeck(){
+    const chosen = shuffle([...animals]).slice(0, currentLevel.pairs);
+    const pairs = [...chosen, ...chosen].map((a, i) => ({ ...a, uid: i }));
+    return shuffle(pairs);
+  }
+
+  function render(){
+    board.innerHTML = '';
+    deck.forEach((item, index) => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+      card.setAttribute('aria-label', 'Face-down card');
+      card.dataset.index = index;
+
+      card.innerHTML = `
+        <div class="card-inner">
+          <div class="card-face card-back">🐾</div>
+          <div class="card-face card-front">
+            <div class="emoji">${item.emoji}</div>
+            <div class="name">${item.name}</div>
+          </div>
+        </div>
+      `;
+
+      card.addEventListener('click', () => handleFlip(index));
+      card.addEventListener('keydown', (e) => {
+        if(e.key === 'Enter' || e.key === ' '){
+          e.preventDefault();
+          handleFlip(index);
+        }
+      });
+
+      board.appendChild(card);
+    });
+  }
+
+  function updateTimerDisplay(){
+    timerEl.textContent = formatTime(secondsLeft);
+    timerPill.classList.toggle('low', secondsLeft <= 30);
+  }
+
+  function startTimer(){
+    stopTimer();
+    secondsLeft = currentLevel.seconds;
+    updateTimerDisplay();
+    timerId = setInterval(() => {
+      secondsLeft--;
+      updateTimerDisplay();
+      if(secondsLeft <= 0){
+        stopTimer();
+        handleTimeout();
+      }
+    }, 1000);
+  }
+
+  function stopTimer(){
+    if(timerId){
+      clearInterval(timerId);
+      timerId = null;
+    }
+  }
+
+  function handleTimeout(){
+    lock = true;
+    const msg = encouragements[Math.floor(Math.random() * encouragements.length)];
+    winEmoji.textContent = "⏰🐾";
+    winHeading.textContent = "Time's Up!";
+    winStats.textContent = `You matched ${matchedCount} out of ${currentLevel.pairs} animals on ${currentLevel.label} Game ${currentGameNum} (${currentLevel.tag}). ${msg}`;
+    lastShareText = `I matched ${matchedCount} out of ${currentLevel.pairs} animals on ${currentLevel.label} (${currentLevel.tag}) in Wild & Woolly Match-Up!`;
+    overlay.classList.add('show');
+  }
+
+  function handleFlip(index){
+    if(lock || secondsLeft <= 0) return;
+    const cardEl = board.children[index];
+    if(cardEl.classList.contains('flipped') || cardEl.classList.contains('matched')) return;
+    if(flipped.length === 2) return;
+
+    cardEl.classList.add('flipped');
+    flipped.push(index);
+
+    if(flipped.length === 2){
+      moves++;
+      movesEl.textContent = moves;
+      checkMatch();
+    }
+  }
+
+  function checkMatch(){
+    const [i1, i2] = flipped;
+    const c1 = board.children[i1];
+    const c2 = board.children[i2];
+
+    if(deck[i1].name === deck[i2].name){
+      lock = true;
+      playCorrectSound();
+      showFeedback(true);
+      setTimeout(() => {
+        c1.classList.add('matched');
+        c2.classList.add('matched');
+        matchedCount++;
+        matchesEl.textContent = matchedCount;
+        flipped = [];
+        lock = false;
+        if(matchedCount === currentLevel.pairs){
+          setTimeout(showWin, 500);
+        }
+      }, 400);
+    } else {
+      lock = true;
+      playIncorrectSound();
+      showFeedback(false);
+      setTimeout(() => {
+        c1.classList.remove('flipped');
+        c2.classList.remove('flipped');
+        flipped = [];
+        lock = false;
+      }, 900);
+    }
+  }
+
+  function showWin(){
+    stopTimer();
+    markGameComplete(currentLevel.id, currentGameNum);
+    const levelDone = isLevelComplete(currentLevel.id);
+    winEmoji.textContent = "🎉🦁🎉";
+    winHeading.textContent = "You did it!";
+    winStats.textContent = `You matched all ${currentLevel.pairs} animals on ${currentLevel.label} Game ${currentGameNum} (${currentLevel.tag}) in ${moves} moves, with ${formatTime(secondsLeft)} to spare!` + (levelDone ? ' 🏅 Level complete!' : '');
+    lastShareText = `I finished ${currentLevel.label} Game ${currentGameNum} (${currentLevel.tag}) in ${moves} moves on Wild & Woolly Match-Up!` + (levelDone ? ' Level badge earned! 🏅' : '');
+    overlay.classList.add('show');
+  }
+
+  function applyLevelLayout(){
+    board.style.setProperty('--cols', currentLevel.cols);
+    board.style.setProperty('--cols-mobile', currentLevel.colsMobile);
+    totalPairsEl.textContent = currentLevel.pairs;
+    timerEl.textContent = formatTime(currentLevel.seconds);
+    currentLevelTag.textContent = `${currentLevel.label} · ${currentLevel.tag} · Game ${currentGameNum}`;
+  }
+
+  function newGame(){
+    deck = buildDeck();
+    flipped = [];
+    matchedCount = 0;
+    moves = 0;
+    lock = false;
+    movesEl.textContent = 0;
+    matchesEl.textContent = 0;
+    overlay.classList.remove('show');
+    applyLevelLayout();
+    render();
+    startTimer();
+  }
+
+  function startLevel(levelId, gameNum){
+    currentLevel = LEVELS.find(l => l.id === levelId) || LEVELS[0];
+    currentGameNum = gameNum;
+    levelSelect.classList.add('hidden');
+    gameArea.classList.remove('hidden');
+    subtitleText.textContent = "Flip two cards to find each animal's pair!";
+    newGame();
+  }
+
+  function showLevelSelect(){
+    stopTimer();
+    overlay.classList.remove('show');
+    gameArea.classList.add('hidden');
+    levelSelect.classList.remove('hidden');
+    subtitleText.textContent = "Pick a level to start matching!";
+    renderLevelSelect();
+  }
+
+  /* ---------------- Share ---------------- */
+
+  function shareResult(){
+    const text = lastShareText || "Playing Wild & Woolly Match-Up!";
+    if(navigator.share){
+      navigator.share({ title: 'Wild & Woolly Match-Up', text, url: location.href }).catch(() => {});
+    } else if(navigator.clipboard){
+      navigator.clipboard.writeText(`${text} ${location.href}`).then(() => {
+        alert('Copied! Paste it anywhere to share the score.');
+      }).catch(() => {
+        alert(text);
+      });
+    } else {
+      alert(text);
+    }
+  }
+
+  /* ---------------- Event wiring ---------------- */
+
+  restartBtn.addEventListener('click', newGame);
+  backBtn.addEventListener('click', showLevelSelect);
+  homeBtn.addEventListener('click', showLevelSelect);
+  playAgainBtn.addEventListener('click', newGame);
+  pickLevelBtn.addEventListener('click', showLevelSelect);
+  shareBtn.addEventListener('click', shareResult);
+
+  renderLevelSelect();
+</script>
+</body>
+</html>
