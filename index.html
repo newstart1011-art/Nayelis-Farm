@@ -906,16 +906,14 @@
     .board{ grid-template-columns: repeat(var(--cols-mobile, 4), minmax(60px, 1fr)); }
 
     #gameArea .stats{
-      position: sticky;
-      top: 0;
-      left: 0;
-      z-index: 5;
-      width: 100vw;
-      margin-left: calc(-50vw + 50%);
-      background: var(--cream);
-      padding: 10px 10px 8px 138px;
-      border-radius: 0 0 18px 18px;
-      box-shadow: 0 6px 14px rgba(27,79,114,0.18);
+      position: static;
+      width: auto;
+      margin: 60px 0 12px;
+      padding: 0;
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+      gap: 8px;
     }
   }
 
@@ -2064,10 +2062,10 @@
 
   @media (max-width: 400px){
     body{ padding: 16px 10px 50px; }
-    .home-btn{ top: 10px; left: 10px; padding: 7px 14px; font-size: 0.92rem; }
+    .home-btn{ top: 10px; left: 10px; padding: 7px 14px; }
     .stats{ gap: 8px; margin: 12px 0; }
-    .stat-pill, .level-tag-pill{ padding: 7px 14px; font-size: 0.95rem; }
-    .nav-btn{ padding: 9px 16px; font-size: 0.98rem; }
+    .stat-pill, .level-tag-pill{ padding: 7px 14px; }
+    .nav-btn{ padding: 9px 16px; }
     .win-card{ padding: 26px 18px; max-width: 92vw; }
     .win-card button{ max-width: 100%; }
     .level-card{ padding: 14px 12px; }
@@ -4667,6 +4665,7 @@
   }
 
   function startSeekLevel(levelId, gameNum){
+    window.scrollTo(0, 0);
     activeMode = 'seek';
     seekLevel = SEEK_LEVELS.find(l => l.id === levelId) || SEEK_LEVELS[0];
     seekGameNum = gameNum;
@@ -4687,6 +4686,7 @@
   }
 
   function showSeekLevelSelect(){
+    window.scrollTo(0, 0);
     activeMode = 'seek';
     stopSeekTimer();
     overlay.classList.remove('show');
@@ -4749,6 +4749,7 @@
   }
 
   function startLevel(levelId, gameNum){
+    window.scrollTo(0, 0);
     activeMode = 'match';
     currentLevel = LEVELS.find(l => l.id === levelId) || LEVELS[0];
     currentGameNum = gameNum;
@@ -4769,6 +4770,7 @@
   }
 
   function showLevelSelect(){
+    window.scrollTo(0, 0);
     activeMode = 'match';
     stopTimer();
     overlay.classList.remove('show');
@@ -4803,6 +4805,7 @@
   }
 
   function showWelcome(){
+    window.scrollTo(0, 0);
     stopTimer();
     stopSeekTimer();
     overlay.classList.remove('show');
@@ -4823,6 +4826,7 @@
   }
 
   function showGameHub(){
+    window.scrollTo(0, 0);
     stopTimer();
     stopSeekTimer();
     overlay.classList.remove('show');
@@ -4927,6 +4931,7 @@
   let companionReturnFn = null;
 
   function showAlmanac(returnFn){
+    window.scrollTo(0, 0);
     companionReturnFn = returnFn || showGameHub;
     stopTimer();
     stopSeekTimer();
@@ -5118,6 +5123,7 @@
   triviaBackToAlmanacBtn.addEventListener('click', showAlmanac);
 
   function showTrivia(returnFn){
+    window.scrollTo(0, 0);
     companionReturnFn = returnFn || showGameHub;
     activeMode = 'trivia';
     stopTimer();
@@ -5280,6 +5286,7 @@
   barnyardConfirmBtn.addEventListener('click', confirmBarnyardPicks);
 
   function showBarnyard(returnFn){
+    window.scrollTo(0, 0);
     companionReturnFn = returnFn || showGameHub;
     stopTimer();
     stopSeekTimer();
@@ -5377,6 +5384,7 @@
   });
 
   function showBuddyPicker(returnFn){
+    window.scrollTo(0, 0);
     buddyReturnFn = returnFn || showGameHub;
     renderBuddyGrid();
     buddyConfirmStep.classList.add('hidden');
