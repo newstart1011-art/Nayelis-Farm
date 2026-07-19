@@ -480,25 +480,28 @@
 
   .settings-gear-btn{
     flex-shrink: 0;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 18px 9px 14px;
+    border-radius: 999px;
     background: white;
     border: 4px solid var(--plum);
     color: var(--plum);
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-shadow: 3px 3px 0 var(--plum);
-    transition: transform 0.15s ease, box-shadow 0.1s ease;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
     touch-action: manipulation;
   }
-  .settings-gear-btn:hover{ transform: rotate(25deg); }
+  .settings-gear-btn:hover{ transform: translate(-1px,-1px); box-shadow: 4px 4px 0 var(--plum); }
   .settings-gear-btn:active{ transform: translate(2px,2px); box-shadow: 1px 1px 0 var(--plum); }
   .settings-gear-btn:focus-visible{ outline: 3px solid var(--sky); outline-offset: 3px; }
   .settings-gear-btn.active{ background: var(--plum); color: white; }
-  .settings-gear-btn svg{ width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .settings-gear-btn svg{ width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+  .settings-gear-btn.active svg{ transform: rotate(35deg); transition: transform 0.2s ease; }
 
   .level-settings-panel{
     width: 100%;
@@ -1643,16 +1646,16 @@
     position: fixed;
     bottom: 20px;
     right: 16px;
-    width: 116px;
-    height: 116px;
+    width: 81px;
+    height: 81px;
     border-radius: 50%;
     background: white;
-    border: 6px solid var(--sun);
+    border: 5px solid var(--sun);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3.6rem;
-    box-shadow: 6px 6px 0 var(--plum);
+    font-size: 2.5rem;
+    box-shadow: 5px 5px 0 var(--plum);
     z-index: 7;
     animation: buddyIdleBob 2.6s ease-in-out infinite;
   }
@@ -1677,7 +1680,7 @@
 
   .buddy-speech{
     position: absolute;
-    bottom: 128px;
+    bottom: 93px;
     right: 0;
     background: white;
     border: 3px solid var(--plum);
@@ -1711,8 +1714,8 @@
   }
 
   @media (max-width: 400px){
-    .buddy-avatar{ width: 92px; height: 92px; font-size: 2.9rem; bottom: 16px; right: 12px; }
-    .buddy-speech{ font-size: 1rem; bottom: 102px; }
+    .buddy-avatar{ width: 64px; height: 64px; font-size: 2rem; bottom: 16px; right: 12px; }
+    .buddy-speech{ font-size: 1rem; bottom: 74px; }
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -1826,6 +1829,16 @@
     z-index: 5;
     animation: none;
     transition: none;
+  }
+
+  .barnyard-item-svg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .barnyard-item-svg svg{
+    width: clamp(30px, 8vw, 46px);
+    height: clamp(30px, 8vw, 46px);
   }
 
   @keyframes barnyardItemPop{
@@ -2389,8 +2402,9 @@
   <div class="hidden level-select" id="levelSelect">
     <div class="level-select-topbar">
       <button class="switch-mode-btn" id="goToSeekBtn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-search"/></svg>Try Hide &amp; Seek instead</button>
-      <button class="settings-gear-btn" id="levelSettingsBtn" aria-label="Level settings" title="Settings" aria-expanded="false">
+      <button class="settings-gear-btn" id="levelSettingsBtn" aria-label="Level settings" title="Change Lock and Timer settings" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        Settings
       </button>
     </div>
 
@@ -2451,6 +2465,7 @@
         <button type="button" class="trivia-mode-btn" id="triviaPickAnimalBtn">🐾 Pick an Animal<span>5 questions, just that animal</span></button>
       </div>
       <div class="trivia-animal-grid hidden" id="triviaAnimalGrid"></div>
+      <button id="triviaModeBarnyardBtn" class="link-btn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-barn"/></svg>Visit My Barnyard <span class="pending-badge hidden" id="triviaBarnyardPendingBadge">0</span></button>
     </div>
 
     <div class="trivia-card hidden" id="triviaQuestionCard">
@@ -2473,6 +2488,7 @@
       <button id="triviaPlayAgainBtn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-refresh"/></svg>Play Again</button>
       <button id="triviaChooseModeBtn" class="secondary-action"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-refresh"/></svg>Choose a Different Mode</button>
       <button id="triviaBackToAlmanacBtn" class="secondary-action"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-book"/></svg>Back to Almanac</button>
+      <button id="triviaVisitBarnyardBtn" class="secondary-action"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-barn"/></svg>Visit My Barnyard</button>
     </div>
 
     <button class="nav-btn" id="triviaBackBtn"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-back"/></svg>Back</button>
@@ -3295,7 +3311,9 @@
     { key: "dog",        emoji: "🐶", name: "Dog",              left: "58%", bottom: "34%" },
     { key: "bicycle",    emoji: "🚲", name: "Bicycle",          left: "68%", bottom: "30%" },
     { key: "chicken",    emoji: "🐔", name: "Chicken",          left: "78%", bottom: "36%" },
-    { key: "pig",        emoji: "🐷", name: "Pig",              left: "88%", bottom: "28%" }
+    { key: "pig",        emoji: "🐷", name: "Pig",              left: "88%", bottom: "28%" },
+    { key: "rosebush",   emoji: "🌹", name: "Rosebush", left: "30%", bottom: "40%",
+      svg: `<svg viewBox="0 0 40 40" width="34" height="34"><ellipse cx="11" cy="27" rx="10" ry="8" fill="#4CAF7D" stroke="#1B4F72" stroke-width="1.5"/><ellipse cx="23" cy="24" rx="12" ry="10" fill="#5BC382" stroke="#1B4F72" stroke-width="1.5"/><ellipse cx="30" cy="28" rx="8" ry="7" fill="#4CAF7D" stroke="#1B4F72" stroke-width="1.5"/><circle cx="13" cy="18" r="3.2" fill="#FF6F91" stroke="#C94B6B" stroke-width="1"/><circle cx="22" cy="13" r="3.6" fill="#FF6F91" stroke="#C94B6B" stroke-width="1"/><circle cx="29" cy="18" r="3" fill="#FF6F91" stroke="#C94B6B" stroke-width="1"/><circle cx="19" cy="22" r="2.6" fill="#FFC93C" stroke="#C99417" stroke-width="1"/></svg>` }
   ];
 
   // How many barnyard items she gets to pick at each game completion, in order
@@ -3421,6 +3439,9 @@
   const triviaLifetimeNote = document.getElementById('triviaLifetimeNote');
   const triviaPlayAgainBtn = document.getElementById('triviaPlayAgainBtn');
   const triviaBackToAlmanacBtn = document.getElementById('triviaBackToAlmanacBtn');
+  const triviaVisitBarnyardBtn = document.getElementById('triviaVisitBarnyardBtn');
+  const triviaModeBarnyardBtn = document.getElementById('triviaModeBarnyardBtn');
+  const triviaBarnyardPendingBadge = document.getElementById('triviaBarnyardPendingBadge');
   const triviaBackBtn = document.getElementById('triviaBackBtn');
   const triviaBuddyAvatar = document.getElementById('triviaBuddyAvatar');
   const triviaBuddyAvatarEmoji = document.getElementById('triviaBuddyAvatarEmoji');
@@ -5121,6 +5142,8 @@
     else startTriviaMixed();
   });
   triviaBackToAlmanacBtn.addEventListener('click', showAlmanac);
+  triviaVisitBarnyardBtn.addEventListener('click', () => showBarnyard(() => showTrivia(showGameHub)));
+  triviaModeBarnyardBtn.addEventListener('click', () => showBarnyard(() => showTrivia(showGameHub)));
 
   function showTrivia(returnFn){
     window.scrollTo(0, 0);
@@ -5156,7 +5179,7 @@
 
   function updateBarnyardPendingBadge(){
     const pending = progress.pendingBarnyardPicks || 0;
-    [barnyardPendingBadge, seekBarnyardPendingBadge, hubBarnyardPendingBadge].forEach(badge => {
+    [barnyardPendingBadge, seekBarnyardPendingBadge, hubBarnyardPendingBadge, triviaBarnyardPendingBadge].forEach(badge => {
       if(pending > 0){
         badge.textContent = `${pending} new`;
         badge.classList.remove('hidden');
@@ -5184,7 +5207,9 @@
       const item = BARNYARD_ITEMS.find(i => i.key === key);
       if(!item) return '';
       const pos = progress.barnyardPositions[key] || { left: item.left, bottom: item.bottom };
-      return `<div class="barnyard-item" data-key="${key}" style="left:${pos.left}; bottom:${pos.bottom};" title="${item.name}">${item.emoji}</div>`;
+      const content = item.svg || item.emoji;
+      const cls = item.svg ? 'barnyard-item barnyard-item-svg' : 'barnyard-item';
+      return `<div class="${cls}" data-key="${key}" style="left:${pos.left}; bottom:${pos.bottom};" title="${item.name}">${content}</div>`;
     }).join('');
     barnyardCountText.textContent = `${progress.barnyardItems.length} of ${BARNYARD_ITEMS.length} items unlocked`;
     barnyardDragHint.classList.toggle('hidden', progress.barnyardItems.length === 0);
