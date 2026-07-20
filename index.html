@@ -173,7 +173,6 @@
   .hero-art{
     width: 100%;
     max-width: 480px;
-    filter: drop-shadow(0 10px 0 var(--plum));
     margin-bottom: 8px;
   }
   .hero-art svg{ width: 100%; height: auto; display:block; }
@@ -2282,7 +2281,7 @@
 
   <div class="welcome-screen" id="welcomeScreen">
     <div class="hero-art">
-      <svg width="520" height="320" viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg">
+      <svg width="520" height="328" viewBox="0 0 520 328" xmlns="http://www.w3.org/2000/svg">
 
   <defs>
     <linearGradient id="skyHero" x1="0" y1="0" x2="0" y2="1">
@@ -2290,6 +2289,7 @@
       <stop offset="100%" stop-color="#7FCBF2"/>
     </linearGradient>
   </defs>
+<rect x="0" y="8" width="520" height="320" rx="26" fill="var(--plum)"/>
 <rect width="520" height="320" rx="26" fill="#7FCBF2" stroke="var(--plum)" stroke-width="6"/>
 <clipPath id="clipHero"><rect width="520" height="320" rx="26"/></clipPath>
 <g clip-path="url(#clipHero)">
@@ -3171,7 +3171,39 @@
     { emoji: "🦓", q: "What makes every zebra one of a kind?", options: ["Their height", "Their stripe pattern", "Their ears", "Their tail"], a: 1, explain: "Every zebra's stripes are unique, like a fingerprint!" },
     { emoji: "🐴", q: "How can horses sleep?", options: ["Only lying down", "Only standing up", "Both lying down and standing up", "They never sleep"], a: 2, explain: "Horses can nap standing up or lying down!" },
     { emoji: "🐠", q: "What can angelfish be trained to do?", options: ["Sing", "Eat from your hand", "Change color on command", "Do tricks in the air"], a: 1, explain: "Angelfish can even recognize their owners!" },
-    { emoji: "❤️", q: "What does Nayeli mean?", options: ["I love you", "I love animals", "I love growing things"], a: 0, explain: "Nayeli is a beautiful name that means 'I love you'!" }
+    { emoji: "❤️", q: "What does Nayeli mean?", options: ["I love you", "I love animals", "I love growing things"], a: 0, explain: "Nayeli is a beautiful name that means 'I love you'!" },
+    { emoji: "🐘", q: "How much can a baby elephant weigh at birth?", options: ["About 5 pounds", "About 50 pounds", "About 250 pounds", "About 1,000 pounds"], a: 2, explain: "Baby elephants are already huge when they're born!" },
+    { emoji: "🦉", q: "Why can owls fly almost silently?", options: ["They fly slowly", "Special soft feather edges", "They're very small", "They don't flap their wings"], a: 1, explain: "Fringed feather edges muffle the sound of air rushing by!" },
+    { emoji: "🦒", q: "How tall can an adult giraffe grow?", options: ["6 feet", "10 feet", "18 feet", "25 feet"], a: 2, explain: "That's taller than most houses' front doors!" },
+    { emoji: "🐶", q: "What is a baby dog's mother called?", options: ["A dam", "A doe", "A hen", "A ewe"], a: 0, explain: "A mother dog is called a dam!" },
+    { emoji: "🐱", q: "What is it called when a cat's tail stands straight up?", options: ["It's scared", "It's happy and confident", "It's sleepy", "It's hungry"], a: 1, explain: "An upright tail is a cat's friendly greeting!" },
+    { emoji: "🐯", q: "Do tiger cubs know how to hunt right away?", options: ["Yes, instantly", "No, their mother teaches them for about 2 years", "They never learn", "Only male cubs learn"], a: 1, explain: "It takes tiger cubs a long time to become skilled hunters!" },
+    { emoji: "🐧", q: "How do penguins keep their eggs warm in freezing weather?", options: ["They don't need to", "They balance them on their feet under a warm flap of skin", "They bury them in snow", "They sit on nests like other birds"], a: 1, explain: "That warm skin flap is called a brood pouch!" },
+    { emoji: "🐬", q: "How do dolphins sleep without drowning?", options: ["They don't sleep", "Half their brain stays awake", "They sleep on the beach", "They hold their breath all night"], a: 1, explain: "One half of a dolphin's brain rests while the other stays alert!" },
+    { emoji: "🐰", q: "How far can a rabbit's ears rotate to listen for danger?", options: ["They can't move", "A little bit", "Almost all the way around", "Only up and down"], a: 2, explain: "Rabbit ears can swivel almost 270 degrees!" },
+    { emoji: "🦘", q: "How does a baby kangaroo get into its mother's pouch?", options: ["It's born there", "It climbs in right after being born", "The mother places it in", "It hops in after a year"], a: 1, explain: "Newborn joeys are tiny and climb into the pouch all by themselves!" },
+    { emoji: "🐮", q: "What do cows chew even when they aren't eating?", options: ["Grass they swallowed earlier, called cud", "Their own hooves", "Nothing, that's a myth", "Small rocks"], a: 0, explain: "Cows bring food back up to chew it again — that's chewing cud!" },
+    { emoji: "🦁", q: "What do you call a group of lions?", options: ["A herd", "A pride", "A pack", "A troop"], a: 1, explain: "A lion family group is called a pride!" },
+    { emoji: "🐑", q: "What is a baby sheep called?", options: ["A kid", "A lamb", "A calf", "A cria"], a: 1, explain: "A baby sheep is called a lamb!" },
+    { emoji: "🐼", q: "What color are baby pandas born?", options: ["Black and white like adults", "Pink and hairless", "All black", "All white"], a: 1, explain: "Newborn pandas are pink, blind, and covered in thin white fur!" },
+    { emoji: "🦓", q: "Do zebras live alone or in groups?", options: ["Always alone", "In groups called herds", "Only in pairs", "In underground burrows"], a: 1, explain: "Zebras stick together in herds for safety!" },
+    { emoji: "🐴", q: "What do you call a young female horse?", options: ["A colt", "A filly", "A foal only", "A mare only"], a: 1, explain: "A young female horse is called a filly!" },
+    { emoji: "🐠", q: "How do fish like angelfish breathe underwater?", options: ["They hold their breath", "Through gills that take oxygen from water", "Through their skin only", "They come up for air"], a: 1, explain: "Gills let fish pull oxygen right out of the water!" },
+    { emoji: "🐴", q: "About how fast can a galloping horse run?", options: ["10 mph", "25-30 mph", "60 mph", "5 mph"], a: 1, explain: "That's about as fast as a car in a neighborhood!" },
+    { emoji: "🐘", q: "What do elephants use their trunks for?", options: ["Just breathing", "Breathing, smelling, drinking, and grabbing things", "Only fighting", "Nothing important"], a: 1, explain: "An elephant's trunk has over 40,000 muscles and does it all!" },
+    { emoji: "🐧", q: "Can all penguins fly?", options: ["Yes, all of them", "No, none of them can fly", "Only baby penguins", "Only in winter"], a: 1, explain: "Penguins are birds that swim instead of fly!" },
+    { emoji: "🦒", q: "What color is a giraffe's tongue?", options: ["Pink", "White", "Dark blue-black", "Yellow"], a: 2, explain: "A giraffe's tongue is dark to protect it from sunburn while reaching for leaves!" },
+    { emoji: "🐯", q: "Do tigers like water?", options: ["No, they avoid it", "Yes, many tigers are great swimmers", "Only in zoos", "They're afraid of it"], a: 1, explain: "Unlike most cats, tigers actually enjoy swimming!" },
+    { emoji: "🐰", q: "What is a group of rabbits called?", options: ["A colony", "A pack", "A litter only", "A herd"], a: 0, explain: "A group of rabbits living together is called a colony!" },
+    { emoji: "🐬", q: "How do dolphins find food in murky water?", options: ["They can't", "Echolocation — bouncing sound off objects", "By smell", "By touch alone"], a: 1, explain: "Dolphins send out clicks and listen for the echoes to 'see' with sound!" },
+    { emoji: "🦘", q: "What is a group of kangaroos called?", options: ["A mob", "A pack", "A herd", "A pod"], a: 0, explain: "A group of kangaroos is called a mob!" },
+    { emoji: "🐮", q: "How many stomach compartments does a cow have?", options: ["1", "2", "4", "6"], a: 2, explain: "Cows have four stomach compartments to help digest tough grass!" },
+    { emoji: "🦁", q: "How much can a lion sleep in a day?", options: ["2-4 hours", "6-8 hours", "13-16 hours", "20-22 hours"], a: 2, explain: "Lions are big cats — and like most cats, they nap a lot!" },
+    { emoji: "🐑", q: "What is sheep's wool used to make?", options: ["Only blankets", "Yarn and clothing like sweaters", "Nothing, it's thrown away", "Only rope"], a: 1, explain: "Sheep's wool gets spun into yarn for warm clothes!" },
+    { emoji: "🐼", q: "What is a baby panda called?", options: ["A cub", "A kit", "A joey", "A calf"], a: 0, explain: "A baby panda is called a cub!" },
+    { emoji: "🦓", q: "What is special about a zebra's stripe pattern?", options: ["They're all identical", "No two zebras have the same pattern", "Only males have stripes", "The stripes change color"], a: 1, explain: "Every zebra's stripes are as unique as a fingerprint!" },
+    { emoji: "🐠", q: "What helps angelfish swim so gracefully?", options: ["Their long, flowing fins", "Their small size only", "They don't swim well", "Their bright colors"], a: 0, explain: "Angelfish have tall, elegant fins built for graceful swimming!" },
+    { emoji: "🐘", q: "How good is an elephant's memory?", options: ["Very poor", "Excellent — they can remember for decades", "About one day", "They have no memory"], a: 1, explain: "Elephants are famous for their remarkably long memories!" }
   ];
 
   // Five extra, distinct questions per animal for the "Pick an Animal" trivia mode.
@@ -3182,119 +3214,238 @@
       { emoji: "🐶", q: "Where do dogs mostly sweat to cool down?", options: ["Through their skin", "Through their paw pads", "They don't sweat at all", "Through their tail"], a: 1, explain: "Dogs cool off through their paw pads and by panting!" },
       { emoji: "🐶", q: "About how many teeth does an adult dog have?", options: ["20", "42", "60", "12"], a: 1, explain: "That's a lot more than a human's 32!" },
       { emoji: "🐶", q: "What do dogs use their whiskers for?", options: ["Just decoration", "Sensing objects nearby", "Hearing better", "Tasting food"], a: 1, explain: "Whiskers help dogs sense things even in the dark!" },
-      { emoji: "🐶", q: "Which is a dog's strongest sense?", options: ["Sight", "Taste", "Smell", "Touch"], a: 2, explain: "A dog's nose is its superpower!" }
+      { emoji: "🐶", q: "Which is a dog's strongest sense?", options: ["Sight", "Taste", "Smell", "Touch"], a: 2, explain: "A dog's nose is its superpower!" },
+      { emoji: "🐶", q: "What is a group of dogs called?", options: ["A pack", "A herd", "A flock", "A pod"], a: 0, explain: "A group of dogs is called a pack!" },
+      { emoji: "🐶", q: "About how many bones does an adult dog have?", options: ["150", "250", "319", "450"], a: 2, explain: "That's way more bones than a human's 206!" },
+      { emoji: "🐶", q: "What can a dog's nose print be used for?", options: ["Telling dogs apart, like a fingerprint", "Nothing special", "Making them sneeze", "Finding water"], a: 0, explain: "Every dog has a totally unique nose print!" },
+      { emoji: "🐶", q: "Which sense do newborn puppies rely on most, since they can't see or hear yet?", options: ["Smell and touch", "Taste", "Sight", "Hearing"], a: 0, explain: "Puppies are born blind and deaf, so smell and touch guide them at first!" },
+      { emoji: "🐶", q: "How many muscles does a dog use to move its ears?", options: ["None, ears don't move", "About 18", "About 2", "About 100"], a: 1, explain: "That's why dogs can swivel their ears toward interesting sounds!" },
+      { emoji: "🐶", q: "What breed is famous for being one of the fastest dogs?", options: ["Bulldog", "Greyhound", "Pug", "Corgi"], a: 1, explain: "Greyhounds can run incredibly fast — built just for speed!" },
+      { emoji: "🐶", q: "Why do dogs pant?", options: ["To cool themselves down", "Because they're hungry", "To talk to other dogs", "Because they're bored"], a: 0, explain: "Panting helps a dog release heat since they can't sweat like we do!" }
     ],
     "Cat": [
       { emoji: "🐱", q: "What is a group of cats called?", options: ["A pack", "A clowder", "A herd", "A flock"], a: 1, explain: "A group of cats is called a clowder!" },
       { emoji: "🐱", q: "What do cats use their whiskers for?", options: ["Decoration", "Measuring if they'll fit through a space", "Hearing", "Smelling"], a: 1, explain: "Whiskers help a cat judge tight spaces!" },
       { emoji: "🐱", q: "About how many bones does a cat have?", options: ["150", "230", "300", "500"], a: 1, explain: "That's more bones than a human has!" },
       { emoji: "🐱", q: "What sound does a happy cat often make?", options: ["Bark", "Purr", "Moo", "Hoot"], a: 1, explain: "A purr usually means a content cat!" },
-      { emoji: "🐱", q: "Cats see well in low light because of...", options: ["Extra eyelids", "A special layer behind their eyes that reflects light", "Bigger ears", "Longer whiskers"], a: 1, explain: "That layer makes their eyes seem to glow in the dark!" }
+      { emoji: "🐱", q: "Cats see well in low light because of...", options: ["Extra eyelids", "A special layer behind their eyes that reflects light", "Bigger ears", "Longer whiskers"], a: 1, explain: "That layer makes their eyes seem to glow in the dark!" },
+      { emoji: "🐱", q: "About how many hours a day do cats spend grooming themselves?", options: ["Almost none", "About 30 minutes", "About 2-5 hours", "12 hours"], a: 2, explain: "Cats are very dedicated to keeping their fur clean!" },
+      { emoji: "🐱", q: "What does it mean when a cat's tail stands straight up?", options: ["It's scared", "It's happy and confident", "It's about to sleep", "It's hungry"], a: 1, explain: "An upright tail is a friendly, confident greeting!" },
+      { emoji: "🐱", q: "Can cats see in complete darkness?", options: ["Yes, perfectly", "No, but they see very well in low light", "No better than humans", "Only kittens can"], a: 1, explain: "Cats need a little light, but they see far better than us in dim rooms!" },
+      { emoji: "🐱", q: "Why do cats knead with their paws?", options: ["It's left over from kittenhood, when they kneaded to nurse", "They're sharpening their claws", "They're marking territory only", "It means they're upset"], a: 0, explain: "Kneading is a comforting, kitten-like habit many cats keep for life!" },
+      { emoji: "🐱", q: "What is a group of kittens from the same litter called?", options: ["A litter", "A clowder", "A pack", "A brood"], a: 0, explain: "A group of baby cats born together is called a litter!" },
+      { emoji: "🐱", q: "How high can a house cat jump compared to its own body length?", options: ["It can't jump much at all", "About 5-6 times its body length", "Exactly its own length", "Twice its length"], a: 1, explain: "Cats have incredibly powerful legs for their size!" },
+      { emoji: "🐱", q: "What is unique about a cat's collarbone?", options: ["It's not attached to other bones, so cats fit through tiny spaces", "Cats don't have one", "It's the biggest bone in their body", "It only appears in kittens"], a: 0, explain: "That floating collarbone helps cats squeeze through narrow gaps!" }
     ],
     "Rabbit": [
       { emoji: "🐰", q: "What is a baby rabbit called?", options: ["Kit", "Cub", "Joey", "Calf"], a: 0, explain: "A baby rabbit is called a kit!" },
       { emoji: "🐰", q: "About how far can a rabbit jump?", options: ["1 foot", "3 feet", "9 feet", "20 feet"], a: 2, explain: "Rabbits have powerful hind legs built for jumping!" },
       { emoji: "🐰", q: "What do rabbits do to warn others of danger?", options: ["Bark loudly", "Thump their back feet", "Whistle", "Change color"], a: 1, explain: "A thump is a rabbit's alarm signal!" },
       { emoji: "🐰", q: "Rabbits can see almost all the way around themselves because...", options: ["They have eyes on the sides of their head", "They have four eyes", "They can spin their head around", "They don't need to see"], a: 0, explain: "That helps them spot danger from almost any direction!" },
-      { emoji: "🐰", q: "What is a group of rabbits called?", options: ["A herd", "A colony", "A pack", "A pod"], a: 1, explain: "A group of rabbits is a colony!" }
+      { emoji: "🐰", q: "What is a group of rabbits called?", options: ["A herd", "A colony", "A pack", "A pod"], a: 1, explain: "A group of rabbits is a colony!" },
+      { emoji: "🐰", q: "How far can a rabbit's ears rotate to listen for danger?", options: ["They can't move", "A little bit", "Almost all the way around", "Only up and down"], a: 2, explain: "Rabbit ears can swivel almost 270 degrees to catch sounds!" },
+      { emoji: "🐰", q: "What is a group of rabbits called?", options: ["A colony", "A pack", "A litter only", "A herd"], a: 0, explain: "A group of rabbits living together is called a colony!" },
+      { emoji: "🐰", q: "How many kits (babies) can a mother rabbit have in one litter?", options: ["Always just 1", "Usually 4-12", "Always 20+", "0-1"], a: 1, explain: "Rabbit litters are usually quite large!" },
+      { emoji: "🐰", q: "Why do rabbits sometimes eat their own droppings?", options: ["It's an accident", "To get extra nutrients their body didn't absorb the first time", "They're always hungry", "It never actually happens"], a: 1, explain: "This surprising habit lets rabbits absorb more nutrients from their food!" },
+      { emoji: "🐰", q: "What does it mean when a rabbit does a happy jump-twist in the air?", options: ["It's called a binky, and means the rabbit is joyful", "It's scared", "It's about to sleep", "It's sick"], a: 0, explain: "A 'binky' is one of the clearest signs a rabbit is happy!" },
+      { emoji: "🐰", q: "How fast can a rabbit run?", options: ["Up to 5 mph", "Up to 15 mph", "Up to 35 mph", "Rabbits can't run"], a: 2, explain: "Rabbits are surprisingly speedy to escape predators!" },
+      { emoji: "🐰", q: "What do rabbits use their strong back legs for besides hopping?", options: ["Thumping the ground to warn other rabbits", "Nothing else", "Digging only", "Swimming"], a: 0, explain: "A thumping rabbit is sending an alarm signal to nearby rabbits!" }
     ],
     "Horse": [
       { emoji: "🐴", q: "What is a baby horse called?", options: ["Kid", "Foal", "Cub", "Calf"], a: 1, explain: "A baby horse is called a foal!" },
       { emoji: "🐴", q: "About how many hours a day do horses spend eating?", options: ["1-2 hours", "4-6 hours", "10-17 hours", "20-22 hours"], a: 2, explain: "Horses graze for most of the day!" },
       { emoji: "🐴", q: "Horses can turn their ears in different directions to...", options: ["Look cooler", "Listen to sounds from many directions at once", "Balance while running", "Talk to other horses"], a: 1, explain: "Their ears work almost like little radar dishes!" },
       { emoji: "🐴", q: "What is a group of horses called?", options: ["A herd", "A team", "A stable", "A gang"], a: 0, explain: "A group of horses is called a herd!" },
-      { emoji: "🐴", q: "About how many muscles does a horse have in each ear?", options: ["2", "5", "10", "16"], a: 3, explain: "That's why horse ears are so expressive!" }
+      { emoji: "🐴", q: "About how many muscles does a horse have in each ear?", options: ["2", "5", "10", "16"], a: 3, explain: "That's why horse ears are so expressive!" },
+      { emoji: "🐴", q: "What is a young female horse called?", options: ["A colt", "A filly", "A foal only", "A mare only"], a: 1, explain: "A young female horse is called a filly!" },
+      { emoji: "🐴", q: "About how fast can a galloping horse run?", options: ["10 mph", "25-30 mph", "60 mph", "5 mph"], a: 1, explain: "That's about as fast as a car driving through a neighborhood!" },
+      { emoji: "🐴", q: "How many hours a day might a horse spend eating?", options: ["Less than 1 hour", "About 2 hours", "10-17 hours", "24 hours nonstop"], a: 2, explain: "Horses graze for most of their waking hours!" },
+      { emoji: "🐴", q: "Can horses see almost all the way around themselves?", options: ["No, only straight ahead", "Yes, nearly 360 degrees thanks to eyes on the sides of their head", "Only behind them", "Only in bright light"], a: 1, explain: "Horses' eye placement gives them a huge field of view!" },
+      { emoji: "🐴", q: "What is it called when a horse's coat color is a mix of brown and black hairs?", options: ["Bay", "Rainbow", "Solid", "Ghost"], a: 0, explain: "Bay is one of the most common horse coat colors!" },
+      { emoji: "🐴", q: "How old can horses live to be?", options: ["5-10 years", "25-30 years", "100+ years", "2-3 years"], a: 1, explain: "With good care, horses often live into their late twenties or beyond!" },
+      { emoji: "🐴", q: "What are baby horses called before they're a year old?", options: ["Foals", "Colts only", "Fillies only", "Yearlings"], a: 0, explain: "Any baby horse under a year old is called a foal!" }
     ],
     "Cow": [
       { emoji: "🐮", q: "What is a baby cow called?", options: ["Kid", "Calf", "Cub", "Fawn"], a: 1, explain: "A baby cow is called a calf!" },
       { emoji: "🐮", q: "How many stomach compartments does a cow have?", options: ["1", "2", "4", "6"], a: 2, explain: "That helps them digest tough grass!" },
       { emoji: "🐮", q: "What's it called when a cow chews its food again after swallowing it?", options: ["Regurgitating for fun", "Chewing cud", "Re-eating", "Grazing twice"], a: 1, explain: "This is called chewing cud!" },
       { emoji: "🐮", q: "Cows can doze off while...", options: ["Only lying down", "Standing up", "Walking", "Swimming"], a: 1, explain: "Cows can nap standing up, though deep sleep needs lying down!" },
-      { emoji: "🐮", q: "About how many hours a day do cows spend lying down?", options: ["1 hour", "4 hours", "10-12 hours", "20 hours"], a: 2, explain: "Cows like to rest a lot during the day!" }
+      { emoji: "🐮", q: "About how many hours a day do cows spend lying down?", options: ["1 hour", "4 hours", "10-12 hours", "20 hours"], a: 2, explain: "Cows like to rest a lot during the day!" },
+      { emoji: "🐮", q: "How many stomach compartments does a cow have?", options: ["1", "2", "4", "6"], a: 2, explain: "Cows have four stomach compartments to help digest tough grass!" },
+      { emoji: "🐮", q: "What do cows chew even when they aren't actively eating?", options: ["Cud — food they bring back up to chew again", "Their own hooves", "Small rocks", "Nothing, that's a myth"], a: 0, explain: "Chewing cud helps cows fully digest tough plants!" },
+      { emoji: "🐮", q: "Do cows have best friends?", options: ["No, they're loners", "Yes, and they get stressed when separated", "Only baby cows do", "Only in movies"], a: 1, explain: "Cows form real friendships and prefer to be near their favorite herd-mates!" },
+      { emoji: "🐮", q: "About how many hours a day does a cow spend lying down?", options: ["Almost none", "About 10-12 hours", "24 hours", "1 hour"], a: 1, explain: "Cows rest and chew cud for a big chunk of their day!" },
+      { emoji: "🐮", q: "What is a baby cow called?", options: ["A calf", "A kid", "A lamb", "A foal"], a: 0, explain: "A baby cow is called a calf!" },
+      { emoji: "🐮", q: "Can cows recognize human faces?", options: ["No, never", "Yes, they can remember familiar people", "Only other cows' faces", "Only for a few seconds"], a: 1, explain: "Cows are smarter than many people realize — they remember faces!" },
+      { emoji: "🐮", q: "How far away can a cow smell something?", options: ["A few inches", "About 6 miles in good conditions", "1 foot", "They can't smell well"], a: 1, explain: "A cow's sense of smell is remarkably powerful!" }
     ],
     "Sheep": [
       { emoji: "🐑", q: "What is a baby sheep called?", options: ["Lamb", "Kid", "Cub", "Joey"], a: 0, explain: "A baby sheep is called a lamb!" },
       { emoji: "🐑", q: "What is the wool coat of a sheep called?", options: ["Fur", "Fleece", "Mane", "Pelt"], a: 1, explain: "A sheep's wool coat is called a fleece!" },
       { emoji: "🐑", q: "What is a female sheep called?", options: ["Ram", "Ewe", "Doe", "Hen"], a: 1, explain: "A female sheep is called a ewe!" },
       { emoji: "🐑", q: "What is a male sheep called?", options: ["Ram", "Buck", "Bull", "Stag"], a: 0, explain: "A male sheep is called a ram!" },
-      { emoji: "🐑", q: "Sheep have rectangular pupils, which help them...", options: ["See colors better", "See almost all the way around them", "See in the dark only", "Sleep with their eyes open"], a: 1, explain: "That wide view helps them watch for predators!" }
+      { emoji: "🐑", q: "Sheep have rectangular pupils, which help them...", options: ["See colors better", "See almost all the way around them", "See in the dark only", "Sleep with their eyes open"], a: 1, explain: "That wide view helps them watch for predators!" },
+      { emoji: "🐑", q: "What is a baby sheep called?", options: ["A kid", "A lamb", "A calf", "A cria"], a: 1, explain: "A baby sheep is called a lamb!" },
+      { emoji: "🐑", q: "What can sheep recognize and remember for years?", options: ["Only their own face", "The faces of other sheep and people", "Colors only", "Nothing at all"], a: 1, explain: "Sheep are surprisingly good at remembering faces long-term!" },
+      { emoji: "🐑", q: "What is sheep's wool used to make?", options: ["Only blankets", "Yarn and clothing like sweaters", "Nothing, it's thrown away", "Only rope"], a: 1, explain: "Sheep's wool gets spun into yarn to make warm clothes!" },
+      { emoji: "🐑", q: "Why do sheep need to be sheared (have their wool cut)?", options: ["Their wool keeps growing and can get too heavy and hot", "It never grows", "It's purely for fun", "Only baby sheep need it"], a: 0, explain: "Without shearing, a sheep's wool coat would just keep growing!" },
+      { emoji: "🐑", q: "Do sheep like to be alone or in groups?", options: ["They prefer being alone", "They stick together in flocks for safety", "It doesn't matter to them", "Only males group together"], a: 1, explain: "Sheep feel safest surrounded by their flock!" },
+      { emoji: "🐑", q: "What shape are a sheep's pupils?", options: ["Round like ours", "Rectangular", "Star-shaped", "They have no pupils"], a: 1, explain: "Rectangular pupils give sheep a wide, panoramic view to watch for danger!" },
+      { emoji: "🐑", q: "What sound does a sheep make?", options: ["Moo", "Baa", "Oink", "Neigh"], a: 1, explain: "Sheep say baa!" }
     ],
     "Lion": [
       { emoji: "🦁", q: "What is a group of lions called?", options: ["A pack", "A pride", "A herd", "A troop"], a: 1, explain: "A group of lions is called a pride!" },
       { emoji: "🦁", q: "Which lions usually do most of the hunting?", options: ["Male lions", "Female lions", "Cubs", "They hunt equally"], a: 1, explain: "Lionesses do most of the pride's hunting!" },
       { emoji: "🦁", q: "What is a baby lion called?", options: ["Kit", "Cub", "Pup", "Calf"], a: 1, explain: "A baby lion is called a cub!" },
       { emoji: "🦁", q: "About how many hours a day do lions rest or sleep?", options: ["4 hours", "8 hours", "13 hours", "20 hours"], a: 3, explain: "Lions are big nappers, resting up to 20 hours a day!" },
-      { emoji: "🦁", q: "What's special about a male lion's mane?", options: ["It helps them swim", "It shows how strong and healthy he is", "It changes color with the seasons", "It helps them hear better"], a: 1, explain: "A fuller, darker mane often signals a healthier lion!" }
+      { emoji: "🦁", q: "What's special about a male lion's mane?", options: ["It helps them swim", "It shows how strong and healthy he is", "It changes color with the seasons", "It helps them hear better"], a: 1, explain: "A fuller, darker mane often signals a healthier lion!" },
+      { emoji: "🦁", q: "What do you call a group of lions?", options: ["A herd", "A pride", "A pack", "A troop"], a: 1, explain: "A lion family group is called a pride!" },
+      { emoji: "🦁", q: "How far away can a lion's roar be heard?", options: ["1 mile", "5 miles", "10 miles", "50 feet"], a: 1, explain: "That's a very loud roar!" },
+      { emoji: "🦁", q: "About how much can a lion sleep in a day?", options: ["2-4 hours", "6-8 hours", "13-16 hours", "20-22 hours"], a: 2, explain: "Lions save their energy with plenty of rest between hunts!" },
+      { emoji: "🦁", q: "Who does most of the hunting in a lion pride?", options: ["The male lions", "The female lions", "Only the cubs", "They don't hunt in groups"], a: 1, explain: "Lionesses do the majority of the pride's hunting!" },
+      { emoji: "🦁", q: "What is a male lion's mane used for?", options: ["Just decoration", "Showing strength and protecting its neck in fights", "Keeping warm only", "Nothing at all"], a: 1, explain: "A bigger, darker mane can signal a stronger, healthier lion!" },
+      { emoji: "🦁", q: "How much meat can a lion eat in one sitting?", options: ["A tiny bite", "Up to 15% of its body weight", "It never overeats", "Only a pound"], a: 1, explain: "Lions gorge when they catch a big meal since hunts aren't guaranteed daily!" },
+      { emoji: "🦁", q: "What is a baby lion called?", options: ["A cub", "A kit", "A joey", "A calf"], a: 0, explain: "A baby lion is called a cub!" }
     ],
     "Elephant": [
       { emoji: "🐘", q: "What do elephants use their trunks for?", options: ["Only breathing", "Breathing, smelling, drinking, and grabbing things", "Only smelling", "Only making sounds"], a: 1, explain: "A trunk is like an all-purpose tool!" },
       { emoji: "🐘", q: "What is a baby elephant called?", options: ["Cub", "Calf", "Kit", "Joey"], a: 1, explain: "A baby elephant is called a calf!" },
       { emoji: "🐘", q: "Elephants are the largest living...", options: ["Reptiles", "Birds", "Land animals", "Sea animals"], a: 2, explain: "Elephants are the biggest animals that walk on land!" },
       { emoji: "🐘", q: "Elephants use their big ears to help...", options: ["Fly", "Cool themselves down", "Swim faster", "See better"], a: 1, explain: "Flapping those big ears helps release heat!" },
-      { emoji: "🐘", q: "About how long is an elephant's pregnancy?", options: ["2 months", "9 months", "almost 2 years", "5 years"], a: 2, explain: "That's the longest pregnancy of any land mammal!" }
+      { emoji: "🐘", q: "About how long is an elephant's pregnancy?", options: ["2 months", "9 months", "almost 2 years", "5 years"], a: 2, explain: "That's the longest pregnancy of any land mammal!" },
+      { emoji: "🐘", q: "How much can a baby elephant weigh at birth?", options: ["About 5 pounds", "About 50 pounds", "About 250 pounds", "About 1,000 pounds"], a: 2, explain: "Baby elephants are already huge when they're born!" },
+      { emoji: "🐘", q: "What do elephants use their trunks for?", options: ["Just breathing", "Breathing, smelling, drinking, and grabbing things", "Only fighting", "Nothing important"], a: 1, explain: "An elephant's trunk has over 40,000 muscles and does it all!" },
+      { emoji: "🐘", q: "How good is an elephant's memory?", options: ["Very poor", "Excellent — they can remember for decades", "About one day", "They have no memory"], a: 1, explain: "Elephants are famous for their remarkably long memories!" },
+      { emoji: "🐘", q: "How do elephants show they care about a family member who has died?", options: ["They don't notice", "They gather around and gently touch the remains", "They leave immediately", "They cannot feel emotions"], a: 1, explain: "Elephants show what looks a lot like grief and mourning!" },
+      { emoji: "🐘", q: "What are elephant tusks made of?", options: ["Bone", "The same material as teeth, called ivory", "Wood-like material", "Hardened skin"], a: 1, explain: "Tusks are actually giant, continuously-growing teeth!" },
+      { emoji: "🐘", q: "How do elephants keep cool in the heat?", options: ["Flapping their big ears to release heat", "They can't cool down", "Sweating heavily", "Panting like dogs"], a: 0, explain: "Blood vessels in their large ears help elephants release body heat!" },
+      { emoji: "🐘", q: "About how much can an adult elephant eat in a day?", options: ["A few pounds", "Up to 300 pounds of plants", "It barely eats", "Only 10 pounds"], a: 1, explain: "Being that big takes a LOT of food!" }
     ],
     "Tiger": [
       { emoji: "🐯", q: "Tigers are the largest species in which animal family?", options: ["Dog family", "Cat family", "Bear family", "Horse family"], a: 1, explain: "Tigers are the biggest of all wild cats!" },
       { emoji: "🐯", q: "What is a baby tiger called?", options: ["Cub", "Kit", "Pup", "Joey"], a: 0, explain: "A baby tiger is called a cub!" },
       { emoji: "🐯", q: "Unlike most cats, tigers actually enjoy...", options: ["Being in groups", "Swimming", "Being loud", "Climbing very high"], a: 1, explain: "Tigers are strong swimmers and love water!" },
       { emoji: "🐯", q: "Besides their fur, where else do a tiger's stripes show up?", options: ["Nowhere else", "Their skin", "Their eyes", "Their teeth"], a: 1, explain: "Even a shaved tiger would still show its stripe pattern on its skin!" },
-      { emoji: "🐯", q: "What is a rarely-seen group of tigers called?", options: ["A pride", "A streak or ambush", "A pack", "A colony"], a: 1, explain: "Tigers are usually solitary, so a group has an unusual name!" }
+      { emoji: "🐯", q: "What is a rarely-seen group of tigers called?", options: ["A pride", "A streak or ambush", "A pack", "A colony"], a: 1, explain: "Tigers are usually solitary, so a group has an unusual name!" },
+      { emoji: "🐯", q: "What's unique about every tiger, like a fingerprint?", options: ["Eye color", "Stripe pattern", "Tail length", "Roar"], a: 1, explain: "No two tigers have the same stripe pattern!" },
+      { emoji: "🐯", q: "Do tiger cubs know how to hunt right away?", options: ["Yes, instantly", "No, their mother teaches them for about 2 years", "They never learn", "Only male cubs learn"], a: 1, explain: "It takes tiger cubs a long time to become skilled hunters!" },
+      { emoji: "🐯", q: "Do tigers like water?", options: ["No, they avoid it", "Yes, many tigers are great swimmers", "Only in zoos", "They're afraid of it"], a: 1, explain: "Unlike most cats, tigers actually enjoy swimming and cooling off!" },
+      { emoji: "🐯", q: "Is a tiger's skin also striped underneath its fur?", options: ["No, tiger skin is solid colored", "Yes, the stripe pattern goes all the way to the skin", "Tigers have no skin pattern", "Only baby tigers have striped skin"], a: 1, explain: "Even if you shaved a tiger, its unique stripe pattern would still show on its skin!" },
+      { emoji: "🐯", q: "How do tigers usually hunt?", options: ["In large packs", "Alone, using stealth to sneak up close", "By chasing prey for miles", "They don't hunt"], a: 1, explain: "Tigers are solo hunters that rely on getting close before pouncing!" },
+      { emoji: "🐯", q: "Which tiger subspecies is the largest?", options: ["Siberian tiger", "The smallest tiger", "There's no size difference", "Sumatran tiger"], a: 0, explain: "Siberian tigers are the biggest tigers in the world!" },
+      { emoji: "🐯", q: "What is a baby tiger called?", options: ["A cub", "A kit", "A joey", "A calf"], a: 0, explain: "A baby tiger is called a cub!" }
     ],
     "Giraffe": [
       { emoji: "🦒", q: "Giraffes are the tallest living...", options: ["Sea animals", "Land animals", "Birds", "Insects"], a: 1, explain: "Giraffes are the tallest animals on land!" },
       { emoji: "🦒", q: "What is a baby giraffe called?", options: ["Cub", "Calf", "Kit", "Joey"], a: 1, explain: "A baby giraffe is called a calf!" },
       { emoji: "🦒", q: "How many neck bones does a giraffe have, compared to a human?", options: ["The same number, 7", "Twice as many, 14", "Half as many", "None"], a: 0, explain: "Each bone is just much, much longer!" },
       { emoji: "🦒", q: "What color is a giraffe's tongue, which helps protect it from sunburn?", options: ["Pink", "Purple-black", "White", "Orange"], a: 1, explain: "That dark color acts like natural sunscreen!" },
-      { emoji: "🦒", q: "About how little do giraffes sleep in a day?", options: ["Under 2 hours", "8 hours", "12 hours", "16 hours"], a: 0, explain: "Giraffes get by on surprisingly little sleep!" }
+      { emoji: "🦒", q: "About how little do giraffes sleep in a day?", options: ["Under 2 hours", "8 hours", "12 hours", "16 hours"], a: 0, explain: "Giraffes get by on surprisingly little sleep!" },
+      { emoji: "🦒", q: "How long can a giraffe's tongue be?", options: ["5 inches", "10 inches", "20 inches", "3 feet"], a: 2, explain: "Long enough to clean its own ears!" },
+      { emoji: "🦒", q: "How tall can an adult giraffe grow?", options: ["6 feet", "10 feet", "18 feet", "25 feet"], a: 2, explain: "That's taller than most houses' front doors!" },
+      { emoji: "🦒", q: "What color is a giraffe's tongue?", options: ["Pink", "White", "Dark blue-black", "Yellow"], a: 2, explain: "A giraffe's tongue is dark to protect it from sunburn while reaching for leaves!" },
+      { emoji: "🦒", q: "How many hours does a giraffe typically sleep per day?", options: ["Less than 2 hours", "8 hours", "16 hours", "20 hours"], a: 0, explain: "Giraffes get by on surprisingly little sleep, often standing up!" },
+      { emoji: "🦒", q: "How many neck bones does a giraffe have compared to a human?", options: ["The same number, just bigger", "Far more than a human", "Half as many", "Giraffes have no neck bones"], a: 0, explain: "Giraffes have 7 neck bones — exactly like humans, just much longer!" },
+      { emoji: "🦒", q: "What is a group of giraffes called?", options: ["A tower", "A herd only", "A pack", "A flock"], a: 0, explain: "A group of giraffes is called a tower!" },
+      { emoji: "🦒", q: "How do giraffes drink water, given their long legs and neck?", options: ["They spread their front legs wide and bend down", "They can't drink water", "They lie down completely", "They use their tail"], a: 0, explain: "Drinking is actually one of the trickiest moves for a giraffe!" }
     ],
     "Panda": [
       { emoji: "🐼", q: "What is a baby panda called?", options: ["Cub", "Kit", "Joey", "Calf"], a: 0, explain: "A baby panda is called a cub!" },
       { emoji: "🐼", q: "Giant pandas are native to which country?", options: ["Japan", "China", "India", "Australia"], a: 1, explain: "Pandas are native to the mountains of China!" },
       { emoji: "🐼", q: "A panda's extra 'thumb' helps it...", options: ["Climb trees", "Hold bamboo stalks", "Dig burrows", "Swim"], a: 1, explain: "That special wrist bone acts like a thumb for gripping bamboo!" },
       { emoji: "🐼", q: "What color are baby pandas when they're born?", options: ["Black and white like adults", "Pink and hairless", "Brown", "Grey"], a: 1, explain: "Their black-and-white coloring comes in later!" },
-      { emoji: "🐼", q: "Giant pandas are part of which animal family?", options: ["Dog family", "Bear family", "Raccoon family", "Cat family"], a: 1, explain: "Despite their diet, pandas are true bears!" }
+      { emoji: "🐼", q: "Giant pandas are part of which animal family?", options: ["Dog family", "Bear family", "Raccoon family", "Cat family"], a: 1, explain: "Despite their diet, pandas are true bears!" },
+      { emoji: "🐼", q: "About how many hours a day do pandas spend eating bamboo?", options: ["2 hours", "6 hours", "12 hours", "20 hours"], a: 2, explain: "Pandas are dedicated bamboo eaters!" },
+      { emoji: "🐼", q: "What color are baby pandas born?", options: ["Black and white like adults", "Pink and hairless", "All black", "All white"], a: 1, explain: "Newborn pandas are pink, blind, and covered in thin white fur!" },
+      { emoji: "🐼", q: "What is a baby panda called?", options: ["A cub", "A kit", "A joey", "A calf"], a: 0, explain: "A baby panda is called a cub!" },
+      { emoji: "🐼", q: "Even though pandas eat mostly bamboo, what type of animal are they?", options: ["Herbivore only, biologically", "Carnivore — they're actually built to eat meat", "Insect eater", "Fish eater"], a: 1, explain: "Pandas belong to the bear family, which is biologically a meat-eating group!" },
+      { emoji: "🐼", q: "About how much bamboo can an adult panda eat in a day?", options: ["A few ounces", "Up to 20-40 pounds", "It doesn't eat bamboo daily", "Over 200 pounds"], a: 1, explain: "Pandas need to eat a huge amount since bamboo isn't very nutritious!" },
+      { emoji: "🐼", q: "Do pandas live in groups or alone?", options: ["In big groups", "Mostly alone", "Only in pairs", "In underground colonies"], a: 1, explain: "Adult pandas are mostly solitary animals!" },
+      { emoji: "🐼", q: "What special 'thumb' helps pandas grip bamboo stalks?", options: ["An extra wrist bone that acts like a thumb", "A regular human-like thumb", "They don't grip bamboo", "Their tail"], a: 0, explain: "This special wrist bone works just like a thumb for gripping!" }
     ],
     "Owl": [
       { emoji: "🦉", q: "Owls turn their whole head instead of moving their eyes because...", options: ["Their eyes are tiny", "Their eyes are fixed in place", "They don't need to see much", "Their eyes are usually closed"], a: 1, explain: "That's also why they can turn their heads so far!" },
       { emoji: "🦉", q: "What helps owls fly almost silently?", options: ["Flying very slowly", "Special soft feather edges", "Not flapping their wings", "Their small size"], a: 1, explain: "Their fringed feathers muffle the sound of flight!" },
       { emoji: "🦉", q: "Most owls are active mainly...", options: ["In the morning", "At midday", "At night", "Underwater"], a: 2, explain: "Owls are famous nighttime hunters!" },
       { emoji: "🦉", q: "What is a group of owls called?", options: ["A parliament", "A flock", "A murder", "A gaggle"], a: 0, explain: "A group of owls is called a parliament!" },
-      { emoji: "🦉", q: "What is a baby owl called?", options: ["Owlet", "Chick", "Cub", "Kit"], a: 0, explain: "A baby owl is called an owlet!" }
+      { emoji: "🦉", q: "What is a baby owl called?", options: ["Owlet", "Chick", "Cub", "Kit"], a: 0, explain: "A baby owl is called an owlet!" },
+      { emoji: "🦉", q: "About how many degrees can an owl turn its head?", options: ["90", "180", "270", "360"], a: 2, explain: "270 degrees is almost all the way around!" },
+      { emoji: "🦉", q: "Why can owls fly almost silently?", options: ["They fly slowly", "Special soft feather edges", "They're very small", "They don't flap their wings"], a: 1, explain: "Fringed feather edges muffle the sound of air rushing by!" },
+      { emoji: "🦉", q: "Can owls move their eyes around in their sockets?", options: ["Yes, easily", "No, their eyes are fixed in place, so they turn their whole head", "Only up and down", "Only the left eye moves"], a: 1, explain: "That's exactly why owls need such flexible necks!" },
+      { emoji: "🦉", q: "When are most owls active?", options: ["During the day", "At night", "Only at sunrise", "They're never active"], a: 1, explain: "Most owls are nocturnal, hunting after dark!" },
+      { emoji: "🦉", q: "How does an owl's hearing help it hunt in darkness?", options: ["It can pinpoint exact prey location by sound alone", "Owls can't hear well", "They rely only on sight", "They use echolocation like bats"], a: 0, explain: "An owl's hearing is so precise it can catch prey it can't even see!" },
+      { emoji: "🦉", q: "What is a group of owls called?", options: ["A parliament", "A flock only", "A pod", "A murder"], a: 0, explain: "A group of owls is charmingly called a parliament!" },
+      { emoji: "🦉", q: "What is a baby owl called?", options: ["An owlet", "A chick only", "A kit", "A cub"], a: 0, explain: "A baby owl is called an owlet!" }
     ],
     "Dolphin": [
       { emoji: "🐬", q: "Dolphins are actually what kind of animal?", options: ["Fish", "Mammals", "Reptiles", "Amphibians"], a: 1, explain: "Dolphins breathe air, just like we do!" },
       { emoji: "🐬", q: "How do dolphins breathe?", options: ["Through gills", "Through a blowhole on top of their head", "Through their skin", "They don't need to breathe"], a: 1, explain: "They surface to breathe through their blowhole!" },
       { emoji: "🐬", q: "Dolphins sleep by...", options: ["Being fully unconscious with both eyes closed", "Resting one half of their brain at a time", "Never sleeping at all", "Only sleeping during the day"], a: 1, explain: "That way they can keep breathing and stay alert while resting!" },
       { emoji: "🐬", q: "What is a baby dolphin called?", options: ["Pup", "Calf", "Kit", "Cub"], a: 1, explain: "A baby dolphin is called a calf!" },
-      { emoji: "🐬", q: "Dolphins use echolocation, which means they...", options: ["See in color underwater", "Send out sounds and listen for echoes to find things", "Talk using bubbles only", "Glow in the dark"], a: 1, explain: "It's like their own built-in sonar!" }
+      { emoji: "🐬", q: "Dolphins use echolocation, which means they...", options: ["See in color underwater", "Send out sounds and listen for echoes to find things", "Talk using bubbles only", "Glow in the dark"], a: 1, explain: "It's like their own built-in sonar!" },
+      { emoji: "🐬", q: "What do dolphins use to call their friends, like a name?", options: ["Clicks only", "Special whistles", "Jumps", "Bubbles"], a: 1, explain: "Every dolphin has its own signature whistle!" },
+      { emoji: "🐬", q: "How do dolphins sleep without drowning?", options: ["They don't sleep", "Half their brain stays awake", "They sleep on the beach", "They hold their breath all night"], a: 1, explain: "One half of a dolphin's brain rests while the other stays alert!" },
+      { emoji: "🐬", q: "How do dolphins find food in murky water?", options: ["They can't", "Echolocation — bouncing sound off objects", "By smell", "By touch alone"], a: 1, explain: "Dolphins send out clicks and listen for the echoes to 'see' with sound!" },
+      { emoji: "🐬", q: "Are dolphins fish?", options: ["Yes", "No, they're mammals that breathe air", "Sometimes", "Only baby dolphins are fish"], a: 1, explain: "Dolphins are mammals — they breathe air and nurse their babies with milk!" },
+      { emoji: "🐬", q: "How do dolphins often work together while hunting?", options: ["They never cooperate", "They herd fish together as a team", "Each dolphin hunts totally alone", "They only hunt at night"], a: 1, explain: "Dolphins are impressively social, cooperative hunters!" },
+      { emoji: "🐬", q: "What is a baby dolphin called?", options: ["A calf", "A pup", "A cub", "A kit"], a: 0, explain: "A baby dolphin is called a calf!" },
+      { emoji: "🐬", q: "How do dolphins breathe?", options: ["Through gills like fish", "Through a blowhole on top of their head", "Through their mouth only", "Through their skin"], a: 1, explain: "Dolphins surface regularly to breathe air through their blowhole!" }
     ],
     "Zebra": [
       { emoji: "🦓", q: "Zebras are most closely related to which animal?", options: ["Cows", "Horses", "Giraffes", "Deer"], a: 1, explain: "Zebras and horses are close cousins!" },
       { emoji: "🦓", q: "What is a baby zebra called?", options: ["Foal", "Cub", "Kit", "Calf"], a: 0, explain: "A baby zebra is called a foal, just like a baby horse!" },
       { emoji: "🦓", q: "Zebras live in Africa, mostly in...", options: ["Deserts only", "Grasslands", "Rainforests", "Mountains only"], a: 1, explain: "Open grasslands are their main home!" },
       { emoji: "🦓", q: "One idea about zebra stripes is that they help...", options: ["Them fly", "Confuse biting flies and predators", "Them breathe underwater", "Them change color"], a: 1, explain: "Scientists think the stripes may confuse biting insects and predators!" },
-      { emoji: "🦓", q: "What is a group of zebras called?", options: ["A herd or a dazzle", "A pod", "A pack", "A colony"], a: 0, explain: "A dazzle of zebras is a real term!" }
+      { emoji: "🦓", q: "What is a group of zebras called?", options: ["A herd or a dazzle", "A pod", "A pack", "A colony"], a: 0, explain: "A dazzle of zebras is a real term!" },
+      { emoji: "🦓", q: "What makes every zebra one of a kind?", options: ["Their height", "Their stripe pattern", "Their ears", "Their tail"], a: 1, explain: "Every zebra's stripes are unique, like a fingerprint!" },
+      { emoji: "🦓", q: "Do zebras live alone or in groups?", options: ["Always alone", "In groups called herds", "Only in pairs", "In underground burrows"], a: 1, explain: "Zebras stick together in herds for safety!" },
+      { emoji: "🦓", q: "What is one theory for why zebras have stripes?", options: ["To confuse biting flies and predators", "Pure decoration", "To stay warm", "To attract mates only"], a: 0, explain: "Scientists think stripes may help confuse flies and predators alike!" },
+      { emoji: "🦓", q: "Can zebras run fast?", options: ["No, they're slow", "Yes, up to about 35 mph", "Only for a few steps", "They can't run at all"], a: 1, explain: "Zebras need speed to escape predators like lions!" },
+      { emoji: "🦓", q: "How do zebra foals recognize their own mother in a big herd?", options: ["By her unique stripe pattern and smell", "They can't tell them apart", "By sound only", "Foals don't need to recognize their mother"], a: 0, explain: "A mother zebra's stripe pattern helps her foal find her!" },
+      { emoji: "🦓", q: "What is a baby zebra called?", options: ["A foal", "A cub", "A kit", "A calf"], a: 0, explain: "A baby zebra is called a foal!" },
+      { emoji: "🦓", q: "Are zebras more closely related to horses or cows?", options: ["Horses", "Cows", "Neither", "Pigs"], a: 0, explain: "Zebras are part of the horse family!" }
     ],
     "Penguin": [
       { emoji: "🐧", q: "Can penguins fly?", options: ["Yes, very high", "No, but they're excellent swimmers", "Only short distances", "Only baby penguins can"], a: 1, explain: "Their wings became flippers built for swimming!" },
       { emoji: "🐧", q: "What is a baby penguin called?", options: ["Chick", "Cub", "Kit", "Pup"], a: 0, explain: "A baby penguin is called a chick!" },
       { emoji: "🐧", q: "Penguins mostly live in...", options: ["The Arctic (North Pole)", "The Southern Hemisphere, including Antarctica", "The desert", "The rainforest"], a: 1, explain: "Most penguins live south of the equator!" },
       { emoji: "🐧", q: "What keeps penguins warm in freezing water?", options: ["Fur", "A thick layer of fat plus dense feathers", "Nothing, they don't feel cold", "Sunlight"], a: 1, explain: "Blubber and tightly packed feathers keep them cozy!" },
-      { emoji: "🐧", q: "What is a group of penguins on land called?", options: ["A waddle or colony", "A pod", "A herd", "A flock only"], a: 0, explain: "On land they're a waddle; in water, a raft!" }
+      { emoji: "🐧", q: "What is a group of penguins on land called?", options: ["A waddle or colony", "A pod", "A herd", "A flock only"], a: 0, explain: "On land they're a waddle; in water, a raft!" },
+      { emoji: "🐧", q: "What do penguins give their mate as a 'proposal'?", options: ["A fish", "A pebble", "A feather", "A shell"], a: 1, explain: "A special pebble is a penguin's way of proposing!" },
+      { emoji: "🐧", q: "How do penguins keep their eggs warm in freezing weather?", options: ["They don't need to", "They balance them on their feet under a warm flap of skin", "They bury them in snow", "They sit on nests like other birds"], a: 1, explain: "That warm skin flap is called a brood pouch!" },
+      { emoji: "🐧", q: "Can all penguins fly?", options: ["Yes, all of them", "No, none of them can fly", "Only baby penguins", "Only in winter"], a: 1, explain: "Penguins are birds that swim instead of fly!" },
+      { emoji: "🐧", q: "What do penguins use their wings for instead of flying?", options: ["Swimming, like flippers", "Nothing, they're useless", "Digging", "Only balance"], a: 0, explain: "A penguin's wings work like powerful flippers underwater!" },
+      { emoji: "🐧", q: "How deep can some penguins dive?", options: ["A few inches", "Over 500 feet", "They can't dive", "1 foot"], a: 1, explain: "Emperor penguins are especially deep, powerful divers!" },
+      { emoji: "🐧", q: "Why do penguins huddle together in large groups?", options: ["To share body warmth in the cold", "Just for fun", "To hide from fish", "They don't huddle"], a: 0, explain: "Huddling together helps penguins survive freezing temperatures!" },
+      { emoji: "🐧", q: "What is a baby penguin called?", options: ["A chick", "A cub", "A kit", "A pup"], a: 0, explain: "A baby penguin is called a chick!" }
     ],
     "Kangaroo": [
       { emoji: "🦘", q: "Where do baby kangaroos grow after birth?", options: ["Underground", "In their mother's pouch", "In a nest", "In water"], a: 1, explain: "The pouch is where a joey grows and nurses!" },
       { emoji: "🦘", q: "Kangaroos are native to which country?", options: ["Brazil", "Australia", "Canada", "Egypt"], a: 1, explain: "Kangaroos are an Australian icon!" },
       { emoji: "🦘", q: "What is a group of kangaroos called?", options: ["A mob", "A herd", "A pack", "A troop"], a: 0, explain: "A group of kangaroos is called a mob!" },
       { emoji: "🦘", q: "Kangaroos use their strong tail mainly for...", options: ["Flying", "Balance while hopping and jumping", "Digging burrows", "Swimming"], a: 1, explain: "Their tail acts almost like a third leg for balance!" },
-      { emoji: "🦘", q: "About how fast can kangaroos hop?", options: ["5 mph", "15 mph", "up to 35 mph", "100 mph"], a: 2, explain: "That's as fast as a car on a neighborhood street!" }
+      { emoji: "🦘", q: "About how fast can kangaroos hop?", options: ["5 mph", "15 mph", "up to 35 mph", "100 mph"], a: 2, explain: "That's as fast as a car on a neighborhood street!" },
+      { emoji: "🦘", q: "What size is a newborn baby kangaroo (a joey)?", options: ["Size of a cat", "Size of a grape", "Size of a shoe", "Size of a football"], a: 1, explain: "Joeys are tiny when they're born!" },
+      { emoji: "🦘", q: "How does a baby kangaroo get into its mother's pouch?", options: ["It's born there", "It climbs in right after being born", "The mother places it in", "It hops in after a year"], a: 1, explain: "Newborn joeys are tiny and climb into the pouch all by themselves!" },
+      { emoji: "🦘", q: "What is a group of kangaroos called?", options: ["A mob", "A pack", "A herd", "A pod"], a: 0, explain: "A group of kangaroos is called a mob!" },
+      { emoji: "🦘", q: "Can kangaroos hop backwards?", options: ["Yes, easily", "No, they physically cannot move backwards", "Only babies can", "Only when scared"], a: 1, explain: "A kangaroo's legs and tail make hopping backward impossible!" },
+      { emoji: "🦘", q: "What do kangaroos use their strong tail for?", options: ["Just balance while hopping", "Balance and also like a extra leg for support", "Nothing important", "Swimming only"], a: 1, explain: "A kangaroo's tail is strong enough to help prop it up like a leg!" },
+      { emoji: "🦘", q: "How fast can a kangaroo hop?", options: ["5 mph", "Over 35 mph", "1 mph", "They can't hop fast"], a: 1, explain: "Kangaroos can really move when they need to escape danger!" },
+      { emoji: "🦘", q: "How far can a large kangaroo leap in a single hop?", options: ["A few inches", "Over 25 feet", "1 foot", "They don't leap far"], a: 1, explain: "That's an enormous jump for one hop!" }
     ],
     "Angelfish": [
       { emoji: "🐠", q: "Angelfish are most commonly found in which kind of water?", options: ["Saltwater oceans", "Freshwater rivers, like the Amazon", "Frozen lakes", "Swimming pools"], a: 1, explain: "Wild angelfish come from South American rivers!" },
       { emoji: "🐠", q: "What shape are angelfish known for?", options: ["Round like a ball", "Tall and flat, like a triangle", "Long and thin like an eel", "Square"], a: 1, explain: "Their tall, flat shape makes them easy to recognize!" },
       { emoji: "🐠", q: "Angelfish often swim in pairs because...", options: ["They can't swim alone", "Many angelfish pair up with a mate", "They get lost easily", "They're afraid of the dark"], a: 1, explain: "Angelfish often form bonded pairs!" },
       { emoji: "🐠", q: "Besides swimming, what do angelfish use their fins for?", options: ["Nothing else", "Sensing their surroundings", "Breathing", "Hearing"], a: 1, explain: "Their fins help them feel out their environment!" },
-      { emoji: "🐠", q: "Angelfish belong to the same family as which other aquarium favorite?", options: ["Goldfish", "Cichlids, like discus fish", "Sharks", "Seahorses"], a: 1, explain: "Angelfish are part of the cichlid family!" }
+      { emoji: "🐠", q: "Angelfish belong to the same family as which other aquarium favorite?", options: ["Goldfish", "Cichlids, like discus fish", "Sharks", "Seahorses"], a: 1, explain: "Angelfish are part of the cichlid family!" },
+      { emoji: "🐠", q: "What can angelfish be trained to do?", options: ["Sing", "Eat from your hand", "Change color on command", "Do tricks in the air"], a: 1, explain: "Angelfish can even recognize their owners!" },
+      { emoji: "🐠", q: "How do fish like angelfish breathe underwater?", options: ["They hold their breath", "Through gills that take oxygen from water", "Through their skin only", "They come up for air"], a: 1, explain: "Gills let fish pull oxygen right out of the water!" },
+      { emoji: "🐠", q: "What helps angelfish swim so gracefully?", options: ["Their long, flowing fins", "Their small size only", "They don't swim well", "Their bright colors"], a: 0, explain: "Angelfish have tall, elegant fins built for graceful swimming!" },
+      { emoji: "🐠", q: "Where do wild angelfish naturally live?", options: ["The Amazon River in South America", "The ocean", "Cold mountain lakes", "The desert"], a: 0, explain: "Angelfish are native to the warm, slow-moving waters of the Amazon!" },
+      { emoji: "🐠", q: "What shape is an angelfish's body?", options: ["Round like a ball", "Tall, flat, and disc-shaped", "Long and thin like an eel", "Square"], a: 1, explain: "That tall, flat shape is part of what makes them so elegant!" },
+      { emoji: "🐠", q: "Do angelfish prefer to live alone or with a partner?", options: ["Completely alone always", "Many form a bonded pair with one mate", "In giant schools of hundreds", "They can't coexist with any other fish"], a: 1, explain: "Angelfish often pair up and stay loyal to one mate!" },
+      { emoji: "🐠", q: "How do angelfish protect their eggs?", options: ["Both parents guard the eggs closely", "They abandon them immediately", "They eat the eggs", "Only the father guards them"], a: 0, explain: "Angelfish parents are surprisingly attentive to their eggs!" }
     ]
   };
 
@@ -5056,6 +5207,7 @@
   /* ---------------- Animal Trivia ---------------- */
 
   const TRIVIA_ROUND_SIZE = 10;
+  const PER_ANIMAL_ROUND_SIZE = 5;
   const TRIVIA_POINTS_PER_CORRECT = 10;
 
   let triviaQueue = [];
@@ -5106,7 +5258,7 @@
     const pool = PER_ANIMAL_TRIVIA[name];
     if(!pool) return;
     lastTriviaAnimal = name;
-    beginTriviaRound(shuffle([...pool]));
+    beginTriviaRound(shuffle([...pool]).slice(0, PER_ANIMAL_ROUND_SIZE));
   }
 
   function startTrivia(){
@@ -5197,9 +5349,12 @@
     if(isNewBest) progress.triviaBestScore = triviaScore;
 
     const percent = triviaScore / triviaQueue.length;
-    const earnedBarnyardBonus = percent >= 0.8;
-    if(earnedBarnyardBonus){
-      progress.pendingBarnyardPicks = (progress.pendingBarnyardPicks || 0) + 1;
+    let barnyardBonusPicks = 0;
+    if(percent >= 1) barnyardBonusPicks = 3;
+    else if(percent >= 0.9) barnyardBonusPicks = 2;
+    else if(percent >= 0.8) barnyardBonusPicks = 1;
+    if(barnyardBonusPicks > 0){
+      progress.pendingBarnyardPicks = (progress.pendingBarnyardPicks || 0) + barnyardBonusPicks;
     }
     saveProgress();
     updateBarnyardPendingBadge();
@@ -5208,8 +5363,11 @@
     triviaResultsEmoji.textContent = perfect ? "🌟🎉🌟" : "🎉";
     triviaResultsHeading.textContent = `${getBuddy().name} says: ${perfect ? 'Perfect Score!' : 'Quiz Complete!'}`;
     triviaResultsText.textContent = `You scored ${triviaScore} out of ${triviaQueue.length} (+${pointsEarned} points)` + (isNewBest ? ' — new best! 🏆' : '');
+    const bonusNote = barnyardBonusPicks > 0
+      ? ` · 🎁 ${Math.round(percent*100)}% score — you unlocked ${barnyardBonusPicks} barnyard pick${barnyardBonusPicks === 1 ? '' : 's'}!`
+      : '';
     triviaLifetimeNote.textContent = `Total lifetime trivia points: ${progress.triviaPoints} · Best round: ${progress.triviaBestScore}/${triviaQueue.length}`
-      + (earnedBarnyardBonus ? ' · 🎁 80%+ score — you unlocked 1 barnyard pick!' : '');
+      + bonusNote;
 
     if(perfect){
       playApplause();
